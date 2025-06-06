@@ -39,32 +39,23 @@ Press:
 
                 switch (menu) {
                 case 1: { 
-                                EmployeeFunction.addEmployeePayroll();
-                                }
+                                System.out.println("Calculate Length of menstrual cycle");
+                                
+                                System.out.print("What is your name? :");
+                                String name = keyboardInput.nextLine();
+                            System.out.println(name);
+                                                          
+                                System.out.print("Enter the date of the first day your previous period started (yyyy-mm-dd): ");
+                                String userdate1 = keyboardInput.nextLine();
                 
-                
-                
-                
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                
-                System.out.print("Enter the date your period started (yyyy-mm-dd): ");
-                String userdate1 = keyboardInput.nextLine();
-                LocalDate dateOne = LocalDate.parse(userdate1, formatter);
-                
-                System.out.print("Enter the date your period ended (yyyy-mm-dd): ");
-                String userdate2 = keyboardInput.nextLine();
-                  LocalDate dateTwo = LocalDate.parse(userdate2, formatter);
-                
-                  long daysDifference = ChronoUnit.DAYS.between(dateOne, dateTwo);
-                
-                  System.out.println(dateTwo);
-                
-                //LocalDate date = today.minusDays(userdate);
-                    //LocalDate date = today.plusDays(userdate);
-
-                System.out.println(dateOne);
-              
-               System.out.println(daysDifference);
+                                System.out.print("Enter the date of a-day before you had your new period (yyyy-mm-dd): ");
+                                String userdate2 = keyboardInput.nextLine();
+     
+                                long cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
+                                System.out.print("The length of your menstrual cycle is: " + cycleLength);
+                                
+                              }  
+                        }
                
                }
         }
