@@ -11,8 +11,6 @@ public class menstrualFunctions {
               LocalDate dateTwo = LocalDate.parse(newPeriod, formatter);  
                 long daysDifference = ChronoUnit.DAYS.between(dateOne, dateTwo);
                 return daysDifference;
-        
-        
         }
 
 

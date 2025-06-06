@@ -36,14 +36,18 @@ Press:
                         System.out.print("Press a number to make a selection between 0 - 7: ");
                         menu = keyboardInput.nextInt();
                         }
-
+        String name = " ";
+        long cycleLength = 0;
+       
                 switch (menu) {
                 case 1: { 
-                                System.out.println("Calculate Length of menstrual cycle");
+                                name = keyboardInput.nextLine();
+
+                                System.out.println();
+                                System.out.println("Calculate the Length of your menstrual cycle");
                                 
-                                System.out.print("What is your name? :");
-                                String name = keyboardInput.nextLine();
-                            System.out.println(name);
+                                System.out.print("What is your name? ");
+                                name = keyboardInput.nextLine();
                                                           
                                 System.out.print("Enter the date of the first day your previous period started (yyyy-mm-dd): ");
                                 String userdate1 = keyboardInput.nextLine();
@@ -51,10 +55,39 @@ Press:
                                 System.out.print("Enter the date of a-day before you had your new period (yyyy-mm-dd): ");
                                 String userdate2 = keyboardInput.nextLine();
      
-                                long cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
-                                System.out.print("The length of your menstrual cycle is: " + cycleLength);
+                                cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
+                                System.out.println();
+                                System.out.println(name + ", your menstrual cycle is " + cycleLength + "days");
                                 
+                                System.out.print("Kindly enter any number to go back to the main menu: ");
+                                String back = keyboardInput.nextLine();
                               }  
+
+                case 2: { 
+                                System.out.print("Have you used our app to calculate your menstrual cycle length (yes/no)?  ");
+                                String userResponse = keyboardInput.nextLine();
+                                userResponse = keyboardInput.nextLine();
+                                
+                                if (userResponse.equalsIgnoreCase("yes")){
+                                        System.out.print("How many days do your period last? ");
+                                        String periodDays = keyboardInput.nextLine();
+                                        System.out.print(cycleLength);
+
+                            }
+                                //else if (userResponse.equalsIgnoreCase("no")){
+
+
+                                        //}
+                                else{
+                                        System.out.print("Invalid response!");
+                                        }
+
+
+
+                                }
+                                
+                                
+                                
                         }
                
                }
