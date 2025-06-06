@@ -6,7 +6,11 @@ import java.util.Scanner;
 public class MenstrualApp {
         public static void main (String[] args) {
                 Scanner keyboardInput = new Scanner(System.in);
-                
+
+        long cycleLength = 0;
+        long [] array = {cycleLength};
+
+            
                 boolean meNU = true;
                 while (meNU) {
 
@@ -37,8 +41,6 @@ Press:
                         menu = keyboardInput.nextInt();
                         }
         String name = " ";
-        long cycleLength = 0;
-        long [] array = {cycleLength};
 
 
        
@@ -59,6 +61,7 @@ Press:
                                 String userdate2 = keyboardInput.nextLine();
      
                                 cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
+                                array[0] = cycleLength;
                                 System.out.println();
                                 System.out.println(name + ", your menstrual cycle is " + cycleLength + " days");
                                 
