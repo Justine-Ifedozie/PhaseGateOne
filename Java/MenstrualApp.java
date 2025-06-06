@@ -23,17 +23,17 @@ Press:
 5. To get tips about painful menstruation.
 6. To get tips about irregular menstruation.
 7. To consult a gynecologist.
-8. To exit the app.
+0. To exit the app.
 =============================
                 """;
 
                 System.out.println(mainMenu);
-                System.out.print("Press a number to make a selection between 1 - 4: ");
+                System.out.print("Press a number to make a selection between 0 - 7: ");
                 int menu = keyboardInput.nextInt();
 
-                if (menu < 0 || menu > 4) {
+                if (menu < 0 || menu > 7) {
                         System.out.println("You entered an invalid option!! Kindly try again or press 0 for Yoruba");
-                        System.out.print("Press a number to make a selection between 1 - 4: ");
+                        System.out.print("Press a number to make a selection between 0 - 7: ");
                         menu = keyboardInput.nextInt();
                         }
 
@@ -65,5 +65,7 @@ Press:
                 System.out.println(dateOne);
               
                System.out.println(daysDifference);
+               
+               }
         }
 }
