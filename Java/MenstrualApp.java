@@ -38,6 +38,9 @@ Press:
                         }
         String name = " ";
         long cycleLength = 0;
+        long [] array = {cycleLength};
+
+
        
                 switch (menu) {
                 case 1: { 
@@ -57,10 +60,12 @@ Press:
      
                                 cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
                                 System.out.println();
-                                System.out.println(name + ", your menstrual cycle is " + cycleLength + "days");
+                                System.out.println(name + ", your menstrual cycle is " + cycleLength + " days");
                                 
                                 System.out.print("Kindly enter any number to go back to the main menu: ");
                                 String back = keyboardInput.nextLine();
+                                System.out.println();
+                                break;
                               }  
 
                 case 2: { 
@@ -71,7 +76,7 @@ Press:
                                 if (userResponse.equalsIgnoreCase("yes")){
                                         System.out.print("How many days do your period last? ");
                                         String periodDays = keyboardInput.nextLine();
-                                        System.out.print(cycleLength);
+                                        System.out.print(array[0]);
 
                             }
                                 //else if (userResponse.equalsIgnoreCase("no")){
