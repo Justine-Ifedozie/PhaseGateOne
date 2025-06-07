@@ -146,9 +146,21 @@ Press:
                                 }     
                                 
                 case 4: {      
-                                
-                                
-                                
+                                System.out.print("What is the length of your average cycle? ");
+                                String averageCycle = keyboardInput.nextLine();
+                                averageCycle = keyboardInput.nextLine();
+                                int averageCycle2 = Integer.parseInt(averageCycle);
+
+                                System.out.print("Enter the start date of your immediate past period (yyyy-mm-dd): ");
+                                String lastPeriodDate = keyboardInput.nextLine();
+
+                                menstrualFunctions.calculateOvulation(averageCycle2, lastPeriodDate);
+                                System.out.println();
+
+                                System.out.print("Kindly enter any number to go back to the main menu: ");
+                                String dummyButton = keyboardInput.nextLine();
+                                System.out.println();
+                                break;
                                 }                  
                                 
                 case 5: {      
