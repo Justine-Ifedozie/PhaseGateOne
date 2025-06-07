@@ -18,14 +18,24 @@ public class menstrualFunctions {
                 LocalDate  mensDate = LocalDate.parse(newPeriod, formatter);
                 LocalDate newMensDate1 = mensDate.plusDays(menstCycle);
 
-                for (int count = 0; count < flowLength; count++){
-                LocalDate newMensDate2 = newMensDate1.plusDays(count);
-                System.out.print("Your next period will be on - Day " + count + ": "+ newMensDate2);
-                System.out.println();
+                for (int count = 1; count < flowLength + 1; count++){
+                        LocalDate newMensDate2 = newMensDate1.plusDays(count);
+                        System.out.print("Your next period will be on - Day " + count + ": "+ newMensDate2);
+                        System.out.println();
                 }
         }
         
+        public static void calculateFlowDates(int flowLength, int CycleLength, String lastPeriodDate) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
+                LocalDate newMensDate1 = mensDate.plusDays(CycleLength);
 
+                for (int count = 1; count < flowLength + 1; count++){
+                        LocalDate newMensDate2 = newMensDate1.plusDays(count);
+                        System.out.print("Your next period will be on - Day " + count + ": "+ newMensDate2);
+                        System.out.println();
+              }
+      }
 
 
 

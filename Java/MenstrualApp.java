@@ -67,7 +67,7 @@ Press:
                                 System.out.println(name + ", your menstrual cycle length is " + cycleLength + " days");
                                 
                                 System.out.print("Kindly enter any number to go back to the main menu: ");
-                                String back = keyboardInput.nextLine();
+                                String dummyButton = keyboardInput.nextLine();
                                 System.out.println();
                                 break;
                               }  
@@ -78,7 +78,7 @@ Press:
                                 userResponse = keyboardInput.nextLine();
                                 
                                 if (userResponse.equalsIgnoreCase("yes")){
-                                        System.out.print("How many days do your period last? ");
+                                        System.out.print("How many days does your period last? ");
                                         String periodDays = keyboardInput.nextLine();
                                         int flowLength = Integer.parseInt(periodDays);
                                         
@@ -86,21 +86,79 @@ Press:
                                         int menstCycle = Math.toIntExact(mensCycle);
 
                                         menstrualFunctions.calculateFlowDays(flowLength, menstCycle, userdate2);
-
+                                        System.out.print("Kindly enter any number to go back to the main menu: ");
+                                        String dummyButton = keyboardInput.nextLine();
+                                        System.out.println();
+                                        break;
                             }
-                                //else if (userResponse.equalsIgnoreCase("no")){
+                                else if (userResponse.equalsIgnoreCase("no")){
+                                        System.out.print("How many days does your period last? ");
+                                        String periodDays = keyboardInput.nextLine();
+                                        int flowLength = Integer.parseInt(periodDays);
 
+                                        System.out.print("Enter the start date of your last period (yyyy-mm-dd): ");
+                                        String lastPeriodDate = keyboardInput.nextLine();
 
-                                        //}
+                                        System.out.print("How long is your menstrual cycle in days (example - 28)? ");
+                                        String cycleLengthDays = keyboardInput.nextLine();
+                                        int CycleLength = Integer.parseInt(cycleLengthDays);
+
+                                        menstrualFunctions.calculateFlowDates(flowLength, CycleLength, lastPeriodDate);
+                                        System.out.println();
+
+                                        System.out.print("Kindly enter any number to go back to the main menu: ");
+                                        String dummyButton = keyboardInput.nextLine();
+                                        System.out.println();
+                                        break;
+                                        }
                                 else{
                                         System.out.print("Invalid response!");
+                                        System.out.print("Kindly enter any number to go back to the main menu: ");
+                                        String dummyButton = keyboardInput.nextLine();
+                                        System.out.println();
+                                        break;    
                                         }
-
-
-
                                 }
                                 
+                case 3: {      
                                 
+                                
+                                
+                                }     
+                                
+                case 4: {      
+                                
+                                
+                                
+                                }                  
+                                
+                case 5: {      
+                                String painfulTips = """
+Below are tips to reduce pain during menstruation!
+=============================
+What will you like to do today?
+
+Press: 
+1. To calculate the length of your cycle.
+2. To calculate your flow date.
+3. To know your safe period.
+4. To calculate your ovulation date.
+5. To get tips about painful menstruation.
+6. To get tips about irregular menstruation.
+7. To consult a gynecologist.
+0. To exit the app.
+=============================
+                """;
+
+                                System.out.println(painfulTips);
+       
+                                
+                                
+                                }             
+                           
+                           
+                           
+                      
                                 
                         }
                
