@@ -16,11 +16,12 @@ public class menstrualFunctions {
         public static void calculateFlowDays(int flowLength, int menstCycle, String newPeriod) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(newPeriod, formatter);
-
-                //LocalDate newMensDate = mensDate.plusDays(flowLength);
+                LocalDate newMensDate1 = mensDate.plusDays(menstCycle);
 
                 for (int count = 0; count < flowLength; count++){
-                System.out.print(LocalDate newMensDate = mensDate.plusDays(flowLength);
+                LocalDate newMensDate2 = newMensDate1.plusDays(count);
+                System.out.print("Your next period will be on - Day " + count + ": "+ newMensDate2);
+                System.out.println();
                 }
         }
         

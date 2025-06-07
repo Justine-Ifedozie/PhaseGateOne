@@ -64,7 +64,7 @@ Press:
                                 cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
                                 array[0] = cycleLength;
                                 System.out.println();
-                                System.out.println(name + ", your menstrual cycle is " + cycleLength + " days");
+                                System.out.println(name + ", your menstrual cycle length is " + cycleLength + " days");
                                 
                                 System.out.print("Kindly enter any number to go back to the main menu: ");
                                 String back = keyboardInput.nextLine();
@@ -86,7 +86,7 @@ Press:
                                         int menstCycle = Math.toIntExact(mensCycle);
 
                                         menstrualFunctions.calculateFlowDays(flowLength, menstCycle, userdate2);
-                                        System.out.print(userdate2);
+
                             }
                                 //else if (userResponse.equalsIgnoreCase("no")){
 
