@@ -43,9 +43,18 @@ public class menstrualFunctions {
 
                 int newShortCycle = shortCycle2 - 18;
                 int newLongCycle = longCycle2 - 11;
-        
-        
-        }
+                
+                for (int count = 1; count < newShortCycle + 1; count++){
+                        LocalDate firstFertileDate = mensDate.plusDays(count); 
+                        System.out.print("Your safe day before your fertile window is from " + firstFertileDate);
+                        System.out.println();
+                }
+                
+                        LocalDate secFertileDate = mensDate.plusDays(longCycle2);
+                
+                        System.out.print("Your other safe days is from: " + secFertileDate +  " till your next period start");
+                        System.out.println();
+                }
 
 
 

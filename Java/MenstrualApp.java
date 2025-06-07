@@ -126,6 +126,7 @@ Press:
                 case 3: {      
                                 System.out.print("What is the length of your shortest cycle? ");
                                 String shortCycle = keyboardInput.nextLine();
+                                shortCycle = keyboardInput.nextLine();
                                 int shortCycle2 = Integer.parseInt(shortCycle);
 
                                 System.out.print("What is the length of your longest cycle? ");
@@ -136,6 +137,12 @@ Press:
                                 String lastPeriodDate = keyboardInput.nextLine();
 
                                 menstrualFunctions.calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate);
+                                System.out.println();
+
+                                System.out.print("Kindly enter any number to go back to the main menu: ");
+                                String dummyButton = keyboardInput.nextLine();
+                                System.out.println();
+                                break;
                                 }     
                                 
                 case 4: {      
