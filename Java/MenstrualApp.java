@@ -8,6 +8,7 @@ public class MenstrualApp {
                 Scanner keyboardInput = new Scanner(System.in);
 
         long cycleLength = 0;
+        String userdate2 = " ";
         long [] array = {cycleLength};
 
             
@@ -54,11 +55,11 @@ Press:
                                 System.out.print("What is your name? ");
                                 name = keyboardInput.nextLine();
                                                           
-                                System.out.print("Enter the date of the first day your previous period started (yyyy-mm-dd): ");
+                                System.out.print("Enter the start date of your previous two periods (yyyy-mm-dd): ");
                                 String userdate1 = keyboardInput.nextLine();
                 
-                                System.out.print("Enter the date of a-day before you had your new period (yyyy-mm-dd): ");
-                                String userdate2 = keyboardInput.nextLine();
+                                System.out.print("Enter the start date of your last period (yyyy-mm-dd): ");
+                                userdate2 = keyboardInput.nextLine();
      
                                 cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
                                 array[0] = cycleLength;
@@ -79,8 +80,13 @@ Press:
                                 if (userResponse.equalsIgnoreCase("yes")){
                                         System.out.print("How many days do your period last? ");
                                         String periodDays = keyboardInput.nextLine();
-                                        System.out.print(array[0]);
+                                        int flowLength = Integer.parseInt(periodDays);
+                                        
+                                        long mensCycle = (array[0]);
+                                        int menstCycle = Math.toIntExact(mensCycle);
 
+                                        menstrualFunctions.calculateFlowDays(flowLength, menstCycle, userdate2);
+                                        System.out.print(userdate2);
                             }
                                 //else if (userResponse.equalsIgnoreCase("no")){
 

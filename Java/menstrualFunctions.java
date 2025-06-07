@@ -13,11 +13,17 @@ public class menstrualFunctions {
                 return daysDifference;
         }
 
+        public static void calculateFlowDays(int flowLength, int menstCycle, String newPeriod) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate  mensDate = LocalDate.parse(newPeriod, formatter);
 
+                //LocalDate newMensDate = mensDate.plusDays(flowLength);
 
-
-
-
+                for (int count = 0; count < flowLength; count++){
+                System.out.print(LocalDate newMensDate = mensDate.plusDays(flowLength);
+                }
+        }
+        
 
 
 
