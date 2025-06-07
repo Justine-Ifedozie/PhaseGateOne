@@ -133,27 +133,49 @@ Press:
                                 }                  
                                 
                 case 5: {      
+                                System.out.println();
                                 String painfulTips = """
 Below are tips to reduce pain during menstruation!
 =============================
-What will you like to do today?
+1. Heat Therapy:
+        Applying heat to the lower abdomen can 
+        help relax muscles and reduce pain.
+        
+2. Regular Exercise:
+        Physical activity, including yoga, can release 
+        endorphins that help relieve pain. 
+        Even gentle exercise can be effective. 
+        
+3. Over-the-Counter Pain Relief:
+        Ibuprofen, naproxen, and acetaminophen can 
+        help reduce pain and inflammation. 
+        Start taking them a day or two before your 
+        period is expected. 
 
-Press: 
-1. To calculate the length of your cycle.
-2. To calculate your flow date.
-3. To know your safe period.
-4. To calculate your ovulation date.
-5. To get tips about painful menstruation.
-6. To get tips about irregular menstruation.
-7. To consult a gynecologist.
-0. To exit the app.
+4. Stress Reduction:
+        Practice relaxation techniques like yoga or 
+        meditation, as stress can worsen menstrual pain. 
+
+
+5. Dietary Changes:
+        Foods to Avoid: Reduce your intake of caffeine, 
+        alcohol, sugar, and salt, as these can exacerbate 
+        bloating and pain. 
+
+
+6. Hydration:
+        Drinking plenty of water can help prevent 
+        bloating and reduce pain. 
+
 =============================
                 """;
-
                                 System.out.println(painfulTips);
        
-                                
-                                
+                                System.out.print("Kindly enter any number to go back to the main menu: ");
+                                String dummyButton = keyboardInput.nextLine();
+                                dummyButton = keyboardInput.nextLine();
+                                System.out.println();
+                                break;    
                                 }             
                            
                            
