@@ -136,7 +136,7 @@ Press:
                                 System.out.println();
                                 String painfulTips = """
 Below are tips to reduce pain during menstruation!
-=============================
+=======================================
 1. Heat Therapy:
         Applying heat to the lower abdomen can 
         help relax muscles and reduce pain.
@@ -167,7 +167,7 @@ Below are tips to reduce pain during menstruation!
         Drinking plenty of water can help prevent 
         bloating and reduce pain. 
 
-=============================
+=======================================
                 """;
                                 System.out.println(painfulTips);
        
@@ -178,10 +178,61 @@ Below are tips to reduce pain during menstruation!
                                 break;    
                                 }             
                            
-                           
-                           
-                      
-                                
+                        case 6: {                       
+                                        System.out.println();
+                                        String irregularMens = """
+Below are tips to correct irregular menstruation!
+=======================================
+1. Diet:
+        A balanced diet rich in fruits, vegetables, whole 
+        grains, lean protein, and healthy fats can 
+        support hormonal balance. 
+
+2. Weight Management:
+        Maintaining a healthy weight can be beneficial, 
+        as extreme weight loss or gain can disrupt hormonal 
+        balance and lead to irregular periods. 
+
+
+3. Stress Management:
+        Practicing stress-reducing techniques like meditation, 
+        yoga, or deep breathing can help regulate hormones 
+        and potentially improve menstrual regularity. 
+=======================================
+                """;
+                                        System.out.println(irregularMens);
+       
+                                        System.out.print("Kindly enter any number to go back to the main menu: ");
+                                        String dummyButton = keyboardInput.nextLine();
+                                        dummyButton = keyboardInput.nextLine();
+                                        System.out.println();
+                                        break;  
+                                }                    
+                    
+                case 7: {    
+                                System.out.println();
+                                String gynecologist = """
+Kindly call or send Dr Justine an email!
+=======================================
+Phone number: 09021887133
+Email: ifedoziennamdi445@gmail.com
+=======================================
+                """;
+                                System.out.println(gynecologist);
+       
+                                System.out.print("Kindly enter any number to go back to the main menu: ");
+                                String dummyButton = keyboardInput.nextLine();
+                                dummyButton = keyboardInput.nextLine();
+                                System.out.println();
+                                break;  
+                                }
+                     
+                case 0: {    
+                                meNU = false;
+                                break;
+                                }
+
+
                         }
                
                }
