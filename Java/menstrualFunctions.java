@@ -13,31 +13,39 @@ public class menstrualFunctions {
                 return daysDifference;
         }
 
-        public static void calculateFlowDays(int flowLength, int menstCycle, String newPeriod) {
+        public static void calculateFlowDays(String name, int flowLength, int menstCycle, String newPeriod) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(newPeriod, formatter);
                 LocalDate newMensDate1 = mensDate.plusDays(menstCycle);
 
                 for (int count = 1; count < flowLength + 1; count++){
                         LocalDate newMensDate2 = newMensDate1.plusDays(count);
-                        System.out.print("Your next period will be on - Day " + count + ": "+ newMensDate2);
+                        System.out.print(name + ", your next period will be on - Day " + count + ": "+ newMensDate2);
                         System.out.println();
                 }
         }
         
-        public static void calculateFlowDates(int flowLength, int CycleLength, String lastPeriodDate) {
+        public static void calculateFlowDates(String name, int flowLength, int CycleLength, String lastPeriodDate) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
                 LocalDate newMensDate1 = mensDate.plusDays(CycleLength);
 
                 for (int count = 1; count < flowLength + 1; count++){
                         LocalDate newMensDate2 = newMensDate1.plusDays(count);
-                        System.out.print("Your next period will be on - Day " + count + ": "+ newMensDate2);
+                        System.out.print(name + ", your next period will be on - Day " + count + ": "+ newMensDate2);
                         System.out.println();
               }
       }
 
+        public static void calculateSafeDays(int shortCycle2, int longCycle2, String lastPeriodDate) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
 
+                int newShortCycle = shortCycle2 - 18;
+                int newLongCycle = longCycle2 - 11;
+        
+        
+        }
 
 
 

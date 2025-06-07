@@ -9,6 +9,7 @@ public class MenstrualApp {
 
         long cycleLength = 0;
         String userdate2 = " ";
+        String name = " ";
         long [] array = {cycleLength};
 
             
@@ -41,7 +42,6 @@ Press:
                         System.out.print("Press a number to make a selection between 0 - 7: ");
                         menu = keyboardInput.nextInt();
                         }
-        String name = " ";
 
 
        
@@ -85,13 +85,16 @@ Press:
                                         long mensCycle = (array[0]);
                                         int menstCycle = Math.toIntExact(mensCycle);
 
-                                        menstrualFunctions.calculateFlowDays(flowLength, menstCycle, userdate2);
+                                        menstrualFunctions.calculateFlowDays(name, flowLength, menstCycle, userdate2);
                                         System.out.print("Kindly enter any number to go back to the main menu: ");
                                         String dummyButton = keyboardInput.nextLine();
                                         System.out.println();
                                         break;
                             }
                                 else if (userResponse.equalsIgnoreCase("no")){
+                                                System.out.print("What is your name? ");
+                                                name = keyboardInput.nextLine();
+
                                         System.out.print("How many days does your period last? ");
                                         String periodDays = keyboardInput.nextLine();
                                         int flowLength = Integer.parseInt(periodDays);
@@ -103,7 +106,7 @@ Press:
                                         String cycleLengthDays = keyboardInput.nextLine();
                                         int CycleLength = Integer.parseInt(cycleLengthDays);
 
-                                        menstrualFunctions.calculateFlowDates(flowLength, CycleLength, lastPeriodDate);
+                                        menstrualFunctions.calculateFlowDates(name, flowLength, CycleLength, lastPeriodDate);
                                         System.out.println();
 
                                         System.out.print("Kindly enter any number to go back to the main menu: ");
@@ -121,9 +124,18 @@ Press:
                                 }
                                 
                 case 3: {      
-                                
-                                
-                                
+                                System.out.print("What is the length of your shortest cycle? ");
+                                String shortCycle = keyboardInput.nextLine();
+                                int shortCycle2 = Integer.parseInt(shortCycle);
+
+                                System.out.print("What is the length of your longest cycle? ");
+                                String longCycle = keyboardInput.nextLine();
+                                int longCycle2 = Integer.parseInt(longCycle);
+
+                                System.out.print("Enter the start date of your recent period (yyyy-mm-dd): ");
+                                String lastPeriodDate = keyboardInput.nextLine();
+
+                                menstrualFunctions.calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate);
                                 }     
                                 
                 case 4: {      
