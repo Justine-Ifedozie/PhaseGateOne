@@ -1,16 +1,4 @@
 
-        function calculateMensCycle(String firstOldPeriod, String newPeriod) {
-              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
-               
-              LocalDate dateOne = LocalDate.parse(firstOldPeriod, formatter);
-              LocalDate dateTwo = LocalDate.parse(newPeriod, formatter);  
-                long daysDifference = ChronoUnit.DAYS.between(dateOne, dateTwo);
-                return daysDifference;
-        }
-        
-        
-       
-
         function calculateFlowDays(String name, int flowLength, int menstCycle, String newPeriod) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(newPeriod, formatter);
@@ -23,7 +11,7 @@
                 }
         }
         
-        public static void calculateFlowDates(String name, int flowLength, int CycleLength, String lastPeriodDate) {
+        function calculateFlowDates(String name, int flowLength, int CycleLength, String lastPeriodDate) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
                 LocalDate newMensDate1 = mensDate.plusDays(CycleLength);

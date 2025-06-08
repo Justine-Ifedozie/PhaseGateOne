@@ -9,19 +9,18 @@ function calculateMensCycle(firstOldPeriod, newPeriod) {
         return days;
         };
 
-function calculateFlowDays(name, flowLength, menstCycle, newPeriod) {
-        const 
+function calculateFlowDates(flowLength, CycleLength, lastPeriodDate){
+        const lastPeriod = new Date(lastPeriodDate);
+        const addCycleLength = CycleLength;
+       lastPeriod.setDate(lastPeriod.getDate() + addCycleLength);
+       const addFlowLength = flowLength - 1;
+       const newLastPeriod = new Date(lastPeriod);
+        newLastPeriod.setDate(newLastPeriod.getDate() + addFlowLength);
+       return {lastPeriod, newLastPeriod};
+      }
+
+    
         
-        LocalDate  mensDate = LocalDate.parse(newPeriod, formatter);
-        LocalDate newMensDate1 = mensDate.plusDays(menstCycle);
-
-                for (int count = 1; count < flowLength + 1; count++){
-                        LocalDate newMensDate2 = newMensDate1.plusDays(count);
-                        System.out.print(name + ", your next period will be on - Day " + count + ": "+ newMensDate2);
-                        System.out.println();
-                }
-        }
-
 
 
 
@@ -59,8 +58,6 @@ Press:
                 menu = Number(prompt('Press a number to make a selection between 0 - 7: '))
         }
 
-
-       
                 switch (menu) {
                 case 1: { 
                                 console.log('\n');
@@ -83,39 +80,22 @@ Press:
                               }  
 
                 case 2: { 
-                                let userResponse = prompt('Have you used our app to calculate your menstrual cycle length (yes/no)?  ')
-                                
-                                if (userResponse.equalsIgnoreCase("yes")){
-                                        let flowLength = Number(prompt('How many days does your period last? '))
-                                        
-                                        
-                                        let menstCycle = (array[0]);
-
-                                        calculateFlowDays(name, flowLength, menstCycle, userdate2);
-                                              let dummyButton = prompt("Kindly enter any number to go back to the main menu: ");
-                                          break;
-                            }
-                                else if (userResponse.equalsIgnoreCase("no")){
                                              name = prompt('What is your name? ')
                                              
                                         let flowLength = Number(prompt('How many days does your period last? '))
 
                                         let lastPeriodDate = prompt('Enter the start date of your last period (yyyy-mm-dd): ')
 
-                                        let CycleLength = Number(prompt('How long is your menstrual cycle in days (example - 28)? '))
+                                        let CycleLength = Number(prompt('What is the legth of your menstrual cycle in days (example - 28)? '))
 
-                                        menstrualFunctions.calculateFlowDates(name, flowLength, CycleLength, lastPeriodDate);
+                                        let {lastPeriod, newLastPeriod} = calculateFlowDates(flowLength, CycleLength, lastPeriodDate);
+                                        console.log(name + ", your new period will start on: " + lastPeriod);
+                                              console.log("Then end: " + newLastPeriod);
                                         console.log('\n');
 
                                               let dummyButton = prompt("Kindly enter any number to go back to the main menu: ");
                                         break;
                                         }
-                                else{
-                                        console.log("Invalid response!");
-                                              let dummyButton = prompt("Kindly enter any number to go back to the main menu: ");
-                                        break;
-                                        }
-                                }
                                 
                 case 3: {      
                                 let shortCycle2 = Number(prompt('What is the length of your shortest cycle? '))
