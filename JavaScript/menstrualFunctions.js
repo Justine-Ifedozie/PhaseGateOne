@@ -41,7 +41,12 @@
                         System.out.println();
                 }
 
-        public static void calculateOvulation(int averageCycle2, String lastPeriodDate){
+        function calculateOvulation(averageCycle2, lastPeriodDate){
+                const periodDate = new Date(lastPeriodDate);
+        
+        
+        
+        
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
                 LocalDate nextPeriodDate = mensDate.plusDays(averageCycle2);

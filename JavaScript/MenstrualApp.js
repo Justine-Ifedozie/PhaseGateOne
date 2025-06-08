@@ -27,16 +27,20 @@ function calculateFlowDates(flowLength, CycleLength, lastPeriodDate){
                 const newShortCycle = shortCycle2 - 18;
                 const newLongCycle = longCycle2 - 11;
                 lastPeriod.setDate(lastPeriod.getDate() + (newShortCycle - 2));
-                
+
                 lastPeriod3.setDate(lastPeriod3.getDate() + newLongCycle);
-                
-                
-                
-                
-                
                 return {lastPeriod2, lastPeriod, lastPeriod3};
                 }
-                
+
+        function calculateOvulation(averageCycle2, lastPeriodDate){
+                const periodDate = new Date(lastPeriodDate);
+                 periodDate.setDate(periodDate.getDate() + averageCycle2);
+                  periodDate.setDate(periodDate.getDate() - 14);     
+                 const fertileWindow = new Date(periodDate);
+                  fertileWindow.setDate(fertileWindow.getDate() - 5);
+                return {periodDate, fertileWindow};
+                }
+
 
 let cycleLength = 0
 let userdate2 = " "
@@ -126,11 +130,13 @@ Press:
 
                                 let lastPeriodDate = prompt('Enter the start date of your immediate past period (yyyy-mm-dd): ')
 
-                                menstrualFunctions.calculateOvulation(averageCycle2, lastPeriodDate);
+                                let {periodDate, fertileWindow} = calculateOvulation(averageCycle2, lastPeriodDate);
                                 console.log('\n');
+                            console.log("Your ovulation day is: " + periodDate);
+                            console.log("Your fertile window is from: " + fertileWindow + " until " + periodDate);
 
-                                    let dummyButton = prompt("Kindly enter any number to go back to the main menu: ");
-                                break;
+                                 let dummyButton = prompt("Kindly enter any number to go back to the main menu: ");
+                                 break;
                                 }                  
                                 
                 case 5: {      
