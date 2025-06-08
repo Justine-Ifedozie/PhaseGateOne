@@ -19,6 +19,33 @@ function calculateFlowDates(flowLength, CycleLength, lastPeriodDate){
        return {lastPeriod, newLastPeriod};
       }
 
+        function calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate) {
+                const lastPeriod = new Date(lastPeriodDate);
+                const newShortCycle = shortCycle2 - 18;
+                const newLongCycle = longCycle2 - 11;
+                lastPeriod.setDate(lastPeriod.getDate() + newShortCycle);
+                lastPeriod.setDate(lastPeriod.getDate() + newShortCycle);
+                
+                
+                
+                return {lastPeriod};
+                }
+                
+                //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                //LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
+
+               // int newShortCycle = shortCycle2 - 18;
+                //int newLongCycle = longCycle2 - 11;
+                
+                        LocalDate firstFertileDate = mensDate.plusDays(newShortCycle - 2); 
+                        System.out.print("Your safe day before your fertile window is from: " + mensDate + " until " + firstFertileDate);
+                        System.out.println();
+                
+                        LocalDate secFertileDate = mensDate.plusDays(newLongCycle);
+                        //System.out.print("Your safe days after fertile window is from: " + secFertileDate +  " until your next period start");
+                       // System.out.println();
+                //}
+
     
         
 
@@ -27,7 +54,6 @@ function calculateFlowDates(flowLength, CycleLength, lastPeriodDate){
 let cycleLength = 0
 let userdate2 = " "
 let name = " "
-let array = [cycleLength]
 
             
 meNU = true;
@@ -62,16 +88,11 @@ Press:
                 case 1: { 
                                 console.log('\n');
                                 console.log("Calculate the Length of your menstrual cycle");
-                                
-                                name = prompt('What is your name? ')
-                                                                                          
+                                name = prompt('What is your name? ')                                                             
                                 userdate1 = prompt('Enter the start date of your previous two periods (yyyy-mm-dd): ')
-                
-                
                                    userdate2 = prompt('Enter the start date of your last periods (yyyy-mm-dd): ')
-     
                                 cycleLength = calculateMensCycle(userdate1, userdate2);
-                                array[0] = cycleLength;
+
                                 console.log('\n');
                                 console.log(name + ", your menstrual cycle length is: " + cycleLength + " days");
                                 
@@ -104,7 +125,8 @@ Press:
 
                                 let lastPeriodDate = prompt('Enter the start date of your recent period (yyyy-mm-dd): ')
 
-                                menstrualFunctions.calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate);
+                                let {lastPeriod} = calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate);
+                                console.log(lastPeriod);
                                 console.log('\n');
 
                                      let dummyButton = prompt("Kindly enter any number to go back to the main menu: ");

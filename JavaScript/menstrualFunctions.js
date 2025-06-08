@@ -23,7 +23,9 @@
               }
       }
 
-        public static void calculateSafeDays(int shortCycle2, int longCycle2, String lastPeriodDate) {
+        function calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate) {
+                const lastPeriod = new Date();
+                
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
 
