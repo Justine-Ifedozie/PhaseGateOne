@@ -53,16 +53,18 @@ public class menstrualFunctions {
                         System.out.println();
                 }
 
-        public static void calculateOvulation(averageCycle2, lastPeriodDate){
+        public static void calculateOvulation(int averageCycle2, String lastPeriodDate){
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate  mensDate = LocalDate.parse(lastPeriodDate, formatter);
                 LocalDate nextPeriodDate = mensDate.plusDays(averageCycle2);
         
-                LocalDate ovulationDay = mensDate.minusDays(14);
+                LocalDate ovulationDay = nextPeriodDate.minusDays(14);
                 System.out.print("Your ovulation day is: " + ovulationDay);
 
+                System.out.println();
+
                 LocalDate fertileWindow = ovulationDay.minusDays(5);
-                System.out.print("Your fertile window is: " + fertileWindow);
+                System.out.print("Your fertile window is: " + fertileWindow + " until " + ovulationDay);
                 System.out.println();
         }
 
