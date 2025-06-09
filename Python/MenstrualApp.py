@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from menstrualFunctions import calculateMensCycle, calculateFlowDates
 
 cycleLength = 0
 array = [cycleLength]
@@ -41,7 +42,7 @@ Press:
                         userdate1 = input("Enter the start date of your previous two periods (yyyy-mm-dd): ")
                         userdate2 = input("Enter the start date of your last periods (yyyy-mm-dd): ")
      
-                        #cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2)
+                        cycleLength = calculateMensCycle(userdate1, userdate2)
 
                         print("\n")
                         print(name, ", your menstrual cycle length is ", cycleLength, " days")
@@ -55,7 +56,9 @@ Press:
                         lastPeriodDate = input("Enter the start date of your last period (yyyy-mm-dd): ")
                         cycleLengthDays = int(input("How long is your menstrual cycle in days (example - 28)? "))
 
-                        #menstrualFunctions.calculateFlowDates(name, flowLength, CycleLength, lastPeriodDate)
+                        newMensDate1, newFlowLength = calculateFlowDates(periodDays, cycleLengthDays, lastPeriodDate)
+                        print(name, ", your next period will be on: ", newMensDate1.strftime('%Y-%m-%d'),  " and continue till: ",  newFlowLength.strftime('%Y-%m-%d'))
+                        
                         print("\n")
                         number = input("Kindly enter any number to go back to the main menu: ")
                                 
