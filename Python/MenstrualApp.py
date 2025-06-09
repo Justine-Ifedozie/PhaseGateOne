@@ -1,22 +1,13 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.util.Scanner;
+from datetime import datetime, timedelta
 
-public class MenstrualApp {
-        public static void main (String[] args) {
-                Scanner keyboardInput = new Scanner(System.in);
-
-        long cycleLength = 0;
-        String userdate2 = " ";
-        String name = " ";
-        long [] array = {cycleLength};
+cycleLength = 0
+array = [cycleLength]
 
             
-                boolean meNU = true;
-                while (meNU) {
+meNU = True
+while meNU:
 
-                String mainMenu = """
+        mainMenu = """
 Welcome to JStarr menstrual calcnic!
 =============================
 What will you like to do today?
@@ -31,141 +22,66 @@ Press:
 7. To consult a gynecologist.
 0. To exit the app.
 =============================
-                """;
+                """
 
-                System.out.println(mainMenu);
-                System.out.print("Press a number to make a selection between 0 - 7: ");
-                int menu = keyboardInput.nextInt();
+        print(mainMenu)
+        menu = int(input("Press a number to make a selection between 0 - 7: "))
 
-                if (menu < 0 || menu > 7) {
-                        System.out.println("You entered an invalid option!! Kindly try again or press 0 for Yoruba");
-                        System.out.print("Press a number to make a selection between 0 - 7: ");
-                        menu = keyboardInput.nextInt();
-                        }
-
+        if menu < 0 or menu > 7:
+                print("You entered an invalid option!! Kindly try again or press 0 for Yoruba")
+                menu = int(input("Press a number to make a selection between 0 - 7: "))
 
        
-                switch (menu) {
-                case 1: { 
-                                name = keyboardInput.nextLine();
-
-                                System.out.println();
-                                System.out.println("Calculate the Length of your menstrual cycle");
-                                
-                                System.out.print("What is your name? ");
-                                name = keyboardInput.nextLine();
+        match menu:
+                case 1:
+                        print("\n")
+                        print("Calculate the Length of your menstrual cycle")
+                        name = input("What is your name? ")
                                                           
-                                System.out.print("Enter the start date of your previous two periods (yyyy-mm-dd): ");
-                                String userdate1 = keyboardInput.nextLine();
-                
-                                System.out.print("Enter the start date of your last period (yyyy-mm-dd): ");
-                                userdate2 = keyboardInput.nextLine();
+                        userdate1 = input("Enter the start date of your previous two periods (yyyy-mm-dd): ")
+                        userdate2 = input("Enter the start date of your last periods (yyyy-mm-dd): ")
      
-                                cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2);
-                                array[0] = cycleLength;
-                                System.out.println();
-                                System.out.println(name + ", your menstrual cycle length is " + cycleLength + " days");
+                        #cycleLength = menstrualFunctions.calculateMensCycle(userdate1, userdate2)
+
+                        print("\n")
+                        print(name, ", your menstrual cycle length is ", cycleLength, " days")
                                 
-                                System.out.print("Kindly enter any number to go back to the main menu: ");
-                                String dummyButton = keyboardInput.nextLine();
-                                System.out.println();
-                                break;
-                              }  
+                        number = input("Kindly enter any number to go back to the main menu: ")
 
-                case 2: { 
-                                System.out.print("Have you used our app to calculate your menstrual cycle length (yes/no)?  ");
-                                String userResponse = keyboardInput.nextLine();
-                                userResponse = keyboardInput.nextLine();
+                case 2:
+                        name = input("What is your name? ")
+
+                        periodDays = int(input("How many days does your period last? "))
+                        lastPeriodDate = input("Enter the start date of your last period (yyyy-mm-dd): ")
+                        cycleLengthDays = int(input("How long is your menstrual cycle in days (example - 28)? "))
+
+                        #menstrualFunctions.calculateFlowDates(name, flowLength, CycleLength, lastPeriodDate)
+                        print("\n")
+                        number = input("Kindly enter any number to go back to the main menu: ")
                                 
-                                if (userResponse.equalsIgnoreCase("yes")){
-                                        System.out.print("How many days does your period last? ");
-                                        String periodDays = keyboardInput.nextLine();
-                                        int flowLength = Integer.parseInt(periodDays);
-                                        
-                                        long mensCycle = (array[0]);
-                                        int menstCycle = Math.toIntExact(mensCycle);
+                case 3:   
+                        shortCycle2 = int(input("What is the length of your shortest cycle? "))
+                        longCycle2 = int(input("What is the length of your shortest cycle? "))
+                        lastPeriodDate = input("Enter the start date of your recent period (yyyy-mm-dd): ")
 
-                                        menstrualFunctions.calculateFlowDays(name, flowLength, menstCycle, userdate2);
-                                        System.out.print("Kindly enter any number to go back to the main menu: ");
-                                        String dummyButton = keyboardInput.nextLine();
-                                        System.out.println();
-                                        break;
-                            }
-                                else if (userResponse.equalsIgnoreCase("no")){
-                                                System.out.print("What is your name? ");
-                                                name = keyboardInput.nextLine();
+                        #menstrualFunctions.calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate)
+                        print("\n")
 
-                                        System.out.print("How many days does your period last? ");
-                                        String periodDays = keyboardInput.nextLine();
-                                        int flowLength = Integer.parseInt(periodDays);
-
-                                        System.out.print("Enter the start date of your last period (yyyy-mm-dd): ");
-                                        String lastPeriodDate = keyboardInput.nextLine();
-
-                                        System.out.print("How long is your menstrual cycle in days (example - 28)? ");
-                                        String cycleLengthDays = keyboardInput.nextLine();
-                                        int CycleLength = Integer.parseInt(cycleLengthDays);
-
-                                        menstrualFunctions.calculateFlowDates(name, flowLength, CycleLength, lastPeriodDate);
-                                        System.out.println();
-
-                                        System.out.print("Kindly enter any number to go back to the main menu: ");
-                                        String dummyButton = keyboardInput.nextLine();
-                                        System.out.println();
-                                        break;
-                                        }
-                                else{
-                                        System.out.print("Invalid response!");
-                                        System.out.print("Kindly enter any number to go back to the main menu: ");
-                                        String dummyButton = keyboardInput.nextLine();
-                                        System.out.println();
-                                        break;    
-                                        }
-                                }
+                        number = input("Kindly enter any number to go back to the main menu: ")   
                                 
-                case 3: {      
-                                System.out.print("What is the length of your shortest cycle? ");
-                                String shortCycle = keyboardInput.nextLine();
-                                shortCycle = keyboardInput.nextLine();
-                                int shortCycle2 = Integer.parseInt(shortCycle);
+                case 4:
+                        averageCycle2 = int(input("What is the length of your average cycle? "))
 
-                                System.out.print("What is the length of your longest cycle? ");
-                                String longCycle = keyboardInput.nextLine();
-                                int longCycle2 = Integer.parseInt(longCycle);
+                        lastPeriodDate = input("Enter the start date of your immediate past period (yyyy-mm-dd): ")
 
-                                System.out.print("Enter the start date of your recent period (yyyy-mm-dd): ");
-                                String lastPeriodDate = keyboardInput.nextLine();
+                        #menstrualFunctions.calculateOvulation(averageCycle2, lastPeriodDate)
+                        print("\n")
 
-                                menstrualFunctions.calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate);
-                                System.out.println();
-
-                                System.out.print("Kindly enter any number to go back to the main menu: ");
-                                String dummyButton = keyboardInput.nextLine();
-                                System.out.println();
-                                break;
-                                }     
+                        number = input("Kindly enter any number to go back to the main menu: ")         
                                 
-                case 4: {      
-                                System.out.print("What is the length of your average cycle? ");
-                                String averageCycle = keyboardInput.nextLine();
-                                averageCycle = keyboardInput.nextLine();
-                                int averageCycle2 = Integer.parseInt(averageCycle);
-
-                                System.out.print("Enter the start date of your immediate past period (yyyy-mm-dd): ");
-                                String lastPeriodDate = keyboardInput.nextLine();
-
-                                menstrualFunctions.calculateOvulation(averageCycle2, lastPeriodDate);
-                                System.out.println();
-
-                                System.out.print("Kindly enter any number to go back to the main menu: ");
-                                String dummyButton = keyboardInput.nextLine();
-                                System.out.println();
-                                break;
-                                }                  
-                                
-                case 5: {      
-                                System.out.println();
-                                String painfulTips = """
+                case 5:  
+                        print("\n")
+                        painfulTips = """
 Below are tips to reduce pain during menstruation!
 =======================================
 1. Heat Therapy:
@@ -199,19 +115,14 @@ Below are tips to reduce pain during menstruation!
         bloating and reduce pain. 
 
 =======================================
-                """;
-                                System.out.println(painfulTips);
+                """
+                        print(painfulTips)
        
-                                System.out.print("Kindly enter any number to go back to the main menu: ");
-                                String dummyButton = keyboardInput.nextLine();
-                                dummyButton = keyboardInput.nextLine();
-                                System.out.println();
-                                break;    
-                                }             
+                        number = input("Kindly enter any number to go back to the main menu: ")           
                            
-                        case 6: {                       
-                                        System.out.println();
-                                        String irregularMens = """
+                case 6:                   
+                        print("\n")
+                        irregularMens = """
 Below are tips to correct irregular menstruation!
 =======================================
 1. Diet:
@@ -230,42 +141,24 @@ Below are tips to correct irregular menstruation!
         yoga, or deep breathing can help regulate hormones 
         and potentially improve menstrual regularity. 
 =======================================
-                """;
-                                        System.out.println(irregularMens);
+                """
+                        print(irregularMens)
        
-                                        System.out.print("Kindly enter any number to go back to the main menu: ");
-                                        String dummyButton = keyboardInput.nextLine();
-                                        dummyButton = keyboardInput.nextLine();
-                                        System.out.println();
-                                        break;  
-                                }                    
+                        number = input("Kindly enter any number to go back to the main menu: ")                
                     
-                case 7: {    
-                                System.out.println();
-                                String gynecologist = """
+                case 7:
+                        print("\n")
+                        gynecologist = """
 Kindly call or send Dr Justine an email!
 =======================================
 Phone number: 09021887133
 Email: ifedoziennamdi445@gmail.com
 =======================================
-                """;
-                                System.out.println(gynecologist);
+                """
+                        print(gynecologist)
        
-                                System.out.print("Kindly enter any number to go back to the main menu: ");
-                                String dummyButton = keyboardInput.nextLine();
-                                dummyButton = keyboardInput.nextLine();
-                                System.out.println();
-                                break;  
-                                }
+                        number = input("Kindly enter any number to go back to the main menu: ")
                      
-                case 0: {    
-                                meNU = false;
-                                break;
-                                }
-
-
-                        }
-               
-               }
-        }
-}
+                case 0:   
+                        meNU = False;
+print("Have a nice day!")
