@@ -25,6 +25,14 @@ def calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate):
         secFertileDate = lastPeriod2 + addLongCycle2
         return firstFertileDate, secFertileDate, lastPeriod
 
+def calculateOvulation(averageCycle2, lastPeriodDate):
+        mensDate = datetime.strptime(lastPeriodDate, format)
+        addAverageCycle2 = timedelta(days = averageCycle2 - 14)
+        ovulationDay = mensDate + addAverageCycle2
+        minusFiveDays = timedelta(days = 5)
+        fertileWindow = ovulationDay - minusFiveDays
+        return ovulationDay, fertileWindow
+
 
     
 

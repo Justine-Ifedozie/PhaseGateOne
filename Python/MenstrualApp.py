@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from menstrualFunctions import calculateMensCycle, calculateFlowDates, calculateSafeDays
+from menstrualFunctions import calculateMensCycle, calculateFlowDates, calculateSafeDays, calculateOvulation
 
 cycleLength = 0
 array = [cycleLength]
@@ -79,7 +79,9 @@ Press:
 
                         lastPeriodDate = input("Enter the start date of your immediate past period (yyyy-mm-dd): ")
 
-                        #menstrualFunctions.calculateOvulation(averageCycle2, lastPeriodDate)
+                        ovulationDay, fertileWindow = calculateOvulation(averageCycle2, lastPeriodDate)
+                        print("Your ovulation day is: ", ovulationDay)
+                        print("Your fertile window is: ", fertileWindow, " until ", ovulationDay)
                         print("\n")
 
                         number = input("Kindly enter any number to go back to the main menu: ")         
