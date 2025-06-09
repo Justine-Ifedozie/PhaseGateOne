@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from menstrualFunctions import calculateMensCycle, calculateFlowDates
+from menstrualFunctions import calculateMensCycle, calculateFlowDates, calculateSafeDays
 
 cycleLength = 0
 array = [cycleLength]
@@ -67,7 +67,9 @@ Press:
                         longCycle2 = int(input("What is the length of your shortest cycle? "))
                         lastPeriodDate = input("Enter the start date of your recent period (yyyy-mm-dd): ")
 
-                        #menstrualFunctions.calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate)
+                        firstFertileDate, secFertileDate, lastPeriod = calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate)
+                        print("Your safe day before your fertile window is from: ", lastPeriod, " until ", firstFertileDate)
+                        print("Your safe days after fertile window is from: ", secFertileDate,  " until your next period start")
                         print("\n")
 
                         number = input("Kindly enter any number to go back to the main menu: ")   

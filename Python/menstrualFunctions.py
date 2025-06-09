@@ -16,5 +16,15 @@ def calculateFlowDates(flowLength, CycleLength, lastPeriodDate):
         newFlowLength = newMensDate1 + add_flowLength
         return newMensDate1, newFlowLength
 
-                
+def calculateSafeDays(shortCycle2, longCycle2, lastPeriodDate):
+        lastPeriod = datetime.strptime(lastPeriodDate, format)
+        addShortCycle2 = timedelta(days = shortCycle2 - 18 - 2)
+        addLongCycle2 = timedelta(days = longCycle2 - 11)
+        firstFertileDate = lastPeriod + addShortCycle2
+        lastPeriod2 = datetime.strptime(lastPeriodDate, format)
+        secFertileDate = lastPeriod2 + addLongCycle2
+        return firstFertileDate, secFertileDate, lastPeriod
+
+
+    
 
