@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.time.LocalDateTime;
 public class CheckOutApp {
         public static void main (String[] args) {
         Scanner keyboardInput = new Scanner(System.in);
@@ -32,33 +33,41 @@ while (menu) {
                 }
         
         System.out.println("What is your name? ");
-        String cashier'sName = keyboardInput.next();
+        String cashierName = keyboardInput.next();
 
         System.out.println("How much discount will he get? ");
         String discount1 = keyboardInput.next();
         int discount = Integer.parseInt(discount1);
 
         String mainMenu = """
-Welcome to JStarr menstrual calcnic!
-=============================
-What will you like to do today?
-
-Press: 
-1. To calculate the length of your cycle.
-2. To calculate your flow date.
-3. To know your safe period.
-4. To calculate your ovulation date.
-5. To get tips about painful menstruation.
-6. To get tips about irregular menstruation.
-7. To consult a gynecologist.
-0. To exit the app.
-=============================
+JUSTINE STORES
+MAIN BRANCH
+LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
+TEL: 09021887133
                 """;
+        System.out.println(mainMenu);
 
-                System.out.println(mainMenu);
+        LocalDateTime dateTime = LocalDateTime.now();
+        System.out.println(dateTime);
+        System.out.println("Cashier: " + cashierName);
+        System.out.println("Customer Name : " + customerName);
+        System.out.print("========================================");
+        System.out.print("ITEM                QTY                PRICE                TOTAL(NGN) ");
+        System.out.print("---------------------------------------------------------------------");
+        System.out.print();
 
 
 
+        System.out.println();
+        System.out.print("---------------------------------------------------------------------");
+        System.out.print("Sub Total: ");
+        System.out.print("Discount ");
+        System.out.print("VAT @ ");
+        System.out.print("========================================");
+        System.out.print("Bill Total: ");
+        System.out.print("========================================");
+        System.out.print("THIS IS NOT A RECEIPT, KINDLY PAY 5803.50");
+        System.out.print("========================================");
 
 
         System.out.print("Enter -1 to quit app or any other number to process another transaction: ");
