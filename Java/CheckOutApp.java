@@ -9,6 +9,8 @@ public class CheckOutApp {
 ArrayList <String> items = new ArrayList <String>();
 ArrayList <Integer> quantity = new ArrayList <Integer>();
 ArrayList <Double> pricee = new ArrayList <Double>();
+ArrayList <Double> total = new ArrayList <Double>();
+
 
 boolean menu = true;
 while (menu) {
@@ -33,6 +35,9 @@ while (menu) {
                 double pricePerUnit = Double.parseDouble(pricePerUnit1);
                 pricee.add(pricePerUnit);
 
+                double toTal = pricePerUnit * pieces;
+                total.add(toTal);
+
                 System.out.println("Add more Items? ");
                 String addMoreItems = keyboardInput.nextLine();
                 addMoreItems = keyboardInput.nextLine();
@@ -47,7 +52,7 @@ while (menu) {
 
         System.out.println("How much discount will he get? ");
         String discount1 = keyboardInput.nextLine();
-        int discount = Integer.parseInt(discount1);
+        double discount = Double.parseDouble(discount1);
 
         String mainMenu = """
 JUSTINE STORES
@@ -62,20 +67,28 @@ TEL: 09021887133
         System.out.println("Cashier: " + cashierName);
         System.out.println("Customer Name : " + customerName);
         System.out.println("===========================================================================");
-        System.out.println("ITEM                QTY                PRICE                TOTAL(NGN) ");
-        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("ITEM                QTY                PRICE                TOTAL (NGN) ");
+        System.out.println("---------------------------------------------------------------------------");
         
         for (int count = 0; count < items.size(); count++) {
-                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t    ₦" + pricee.get(count));
+                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
                 System.out.println();
                 }
 
 
         System.out.println();
-        System.out.println("-------------------------------------------------------------------------");
-        System.out.println("Sub Total: ");
-        System.out.println("Discount ");
-        System.out.println("VAT @ ");
+        System.out.println("---------------------------------------------------------------------------");
+        
+        double sum = 0;
+        for (int count = 0; count < total.size(); count++) {
+                sum += total.get(count);
+        }
+
+        System.out.println("                        \t \t Sub Total: \t" + "\t" + sum);
+        
+        double discounT = sum * (discount / 100);
+        System.out.println("                        \t \t Discount: \t" + "\t" + discounT);
+        System.out.println("VAT @ 17.50%");
         System.out.println("===========================================================================");
         System.out.println("Bill Total: ");
         System.out.println("===========================================================================");
