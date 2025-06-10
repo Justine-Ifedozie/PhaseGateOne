@@ -65,22 +65,26 @@ TEL: 09021887133
         for (let count = 0; count < purchaseDataBase.length; count++) {
                 sum += totalPriceDataBase[count];
         }
+        let sumF = sum.toFixed(2);
 
-        console.log("                        \t \t Sub Total: \t" + "\t %.2f", sum);
+        console.log("                        \t \t Sub Total: \t" + "\t ", sumF);
         
-        const discounT = sum * (discount / 100);
-        console.log("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        let discounT = sum * (discount / 100);
+        let discountF = discounT.toFixed(2);
+        console.log("\n                        \t \t Discount: \t" + "\t ", discountF);
         
-        const vat = sum * (17.50 / 100);
-         console.log("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
+         let vat = sum * (17.50 / 100);
+        let vatF = vat.toFixed(2);
+         console.log("\n                         \t   VAT  @  17.50: \t" + "\t ", vatF);
         console.log();
         
         console.log("===========================================================================");
         
-        const billTotal = sum - discounT + vat;
-        console.log("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
+        let billTotal = sum - discounT + vat;
+        let billTotalF = billTotal.toFixed(2);
+        console.log("\n                        \t \t Bill Total: \t" + "\t ", billTotalF);
         console.log("\n===========================================================================");
-        console.log("THIS IS NOT A RECEIPT, KINDLY PAY   %.2f", billTotal);
+        console.log("THIS IS NOT A RECEIPT, KINDLY PAY   ", billTotalF);
         console.log("\n===========================================================================");
 
         console.log();
@@ -119,24 +123,32 @@ TEL: 09021887133
         for (let count = 0; count < purchaseDataBase.length; count++) {
                 sum += totalPriceDataBase[count];
         }
-
-        console.log("                        \t \t Sub Total: \t" + "\t %.2f", sum);
         
+        sumF = sum.toFixed(2);
+        console.log("                        \t \t Sub Total: \t" + "\t ", sumF); 
+               
         discounT = sum * (discount / 100);
-        console.log("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+       discountF = discounT.toFixed(2);
+       console.log("\n                        \t \t Discount: \t" + "\t ", discountF);
         
-         vat = sum * (17.50 / 100);
-         console.log("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
+        vat = sum * (17.50 / 100);
+        vatF = vat.toFixed(2);
+        console.log("\n                         \t   VAT  @  17.50: \t" + "\t ", vatF);
         console.log();
         
         console.log("===========================================================================");
         
         billTotal = sum - discounT + vat;
-        console.log("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
-         console.log("\n                        \t \t Amount Paid: \t" + "\t %.2f", payment);
+        billTotalF = billTotal.toFixed(2);
+        console.log("\n                        \t \t Bill Total: \t" + "\t ", billTotalF);
+        
+        let paymentF = payment.toFixed(2);
+         console.log("\n                        \t \t Amount Paid: \t" + "\t ", paymentF);
          
         let balance = payment - billTotal;
-        console.log("\n                        \t \t Balance: \t" + "\t %.2f", balance);
+        
+        let balanceF = balance.toFixed(2);
+        console.log("\n                        \t \t Balance: \t" + "\t ", balanceF);
         console.log("\n===========================================================================");
         console.log("                        THANK YOU FOR YOUR PATRONAGE");
         console.log("===========================================================================");
