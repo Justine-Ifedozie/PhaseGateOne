@@ -1,6 +1,9 @@
 const prompt = require("prompt-sync")();
 
-let dataBase = { };
+let purchaseDataBase = [];
+let quantityDataBase = [];
+let purchaseDataBase = [];
+
 menu = true;
 while (menu) {
 
@@ -10,153 +13,136 @@ while (menu) {
                 while (subMenu) {
 
                 userPurchase = Number(prompt("What did the user buy? "));
-                dataBase.userCart = userPurchase;
+                purchaseDataBase.push(userPurchase);
 
                 pieces = Number(prompt("How many pieces? "));
-                dataBase.quantity = pieces;
+                quantityDataBase.push(pieces);
 
                 pricePerUnit = Number(prompt("How much per unit? "));
-                dataBase.price = pricePerUnit;
+                dataBase.push(pricePerUnit);
 
-                toTal = pricePerUnit * pieces;
-                dataBase.total = toTals;
-                total.add(toTal);
+                let toTal = pricePerUnit * pieces;
+                dataBase.push(toTal);
 
-                System.out.println("Add more Items? ");
-                String addMoreItems = keyboardInput.nextLine();
-                addMoreItems = keyboardInput.nextLine();
+                addMoreItems = prompt("Add more Items? ");
 
-                if (addMoreItems.equalsIgnoreCase("yes")) subMenu = true;
+                if (addMoreItems.toLowerCase() == "yes") subMenu = true;
 
-                else if (addMoreItems.equalsIgnoreCase("no")) subMenu = false;
+                else if (addMoreItems.toLowerCase() == "no") subMenu = false;
                 }
         
-        System.out.println("What is your name? ");
-        String cashierName = keyboardInput.nextLine();
+        cashierName = prompt("What is your name? ");
 
-        System.out.println("How much discount will he get? ");
-        String discount1 = keyboardInput.nextLine();
-        double discount = Double.parseDouble(discount1);
+        discount = Number(prompt("How much discount will he get? "));
 
-        String mainMenu = """
+mainMenu = `
 JUSTINE STORES
 MAIN BRANCH
 LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
 TEL: 09021887133
-                """;
-        System.out.println(mainMenu);
+                `
+        console.log(mainMenu);
 
-        LocalDateTime dateTime = LocalDateTime.now();
-        System.out.println(dateTime);
-        System.out.println("Cashier: " + cashierName);
-        System.out.println("Customer Name : " + customerName);
-        System.out.println("===========================================================================");
-        System.out.println("ITEM                QTY                PRICE                TOTAL (NGN) ");
-        System.out.println("---------------------------------------------------------------------------");
+        const presentDate = new Date();
+        console.log(presentDate);
+        console.log("Cashier: " + cashierName);
+        console.log("Customer Name : " + customerName);
+        console.log("===========================================================================");
+        console.log("ITEM                QTY                PRICE                TOTAL (NGN) ");
+        console.log("---------------------------------------------------------------------------");
         
-        for (int count = 0; count < items.size(); count++) {
-                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
-                System.out.println();
+        for (let count = 0; count < dataBase.length; count++) {
+                console.log(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
+                console.log();
                 }
 
 
-        System.out.println();
-        System.out.println("---------------------------------------------------------------------------");
+        console.log();
+        console.log("---------------------------------------------------------------------------");
         
-        double sum = 0;
-        for (int count = 0; count < total.size(); count++) {
+        const sum = 0;
+        for (let count = 0; count < dataBase.length; count++) {
                 sum += total.get(count);
         }
 
-        System.out.printf("                        \t \t Sub Total: \t" + "\t %.2f", sum);
+        console.log("                        \t \t Sub Total: \t" + "\t %.2f", sum);
         
-        double discounT = sum * (discount / 100);
-        System.out.printf("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        const discounT = sum * (discount / 100);
+        console.log("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
         
-        double vat = sum * (17.50 / 100);
-         System.out.printf("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
-        System.out.println();
+        const vat = sum * (17.50 / 100);
+         console.log("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
+        console.log();
         
-        System.out.println("===========================================================================");
+        console.log("===========================================================================");
         
-        double billTotal = sum - discounT + vat;
-        System.out.printf("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
-        System.out.println("\n===========================================================================");
-        System.out.printf("THIS IS NOT A RECEIPT, KINDLY PAY   %.2f", billTotal);
-        System.out.println("\n===========================================================================");
+        const billTotal = sum - discounT + vat;
+        console.log("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
+        console.log("\n===========================================================================");
+        console.log("THIS IS NOT A RECEIPT, KINDLY PAY   %.2f", billTotal);
+        console.log("\n===========================================================================");
 
-        System.out.println();
-        System.out.println();
+        console.log();
+        console.log();
 
-        System.out.println("How much did the customer give to you? ");
-        String payment1 = keyboardInput.next();
-        double payment = Double.parseDouble(payment1);
+        payment = Number(prompt("How much did the customer give to you? "));
 
-        System.out.println();
-        System.out.println();
+        console.log();
+        console.log();
 
-        String mainMenu1 = """
+mainMenu1 = `
 JUSTINE STORES
 MAIN BRANCH
 LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
 TEL: 09021887133
-                """;
-        System.out.println(mainMenu1);
+                `
+        console.log(mainMenu1);
 
-        LocalDateTime dateTime2 = LocalDateTime.now();
-        System.out.println(dateTime2);
-        System.out.println("Cashier: " + cashierName);
-        System.out.println("Customer Name : " + customerName);
-        System.out.println("===========================================================================");
-        System.out.println("ITEM                QTY                PRICE                TOTAL (NGN) ");
-        System.out.println("---------------------------------------------------------------------------");
+        console.log(presentDate);
+        console.log("Cashier: " + cashierName);
+        console.log("Customer Name : " + customerName);
+        console.log("===========================================================================");
+        console.log("ITEM                QTY                PRICE                TOTAL (NGN) ");
+        console.log("---------------------------------------------------------------------------");
         
-        for (int count = 0; count < items.size(); count++) {
-                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
-                System.out.println();
+        for (let count = 0; count < items.size(); count++) {
+                console.log(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
+                console.log();
                 }
 
 
-        System.out.println();
-        System.out.println("---------------------------------------------------------------------------");
+        console.log();
+        console.log("---------------------------------------------------------------------------");
         
         sum = 0;
-        for (int count = 0; count < total.size(); count++) {
+        for (count = 0; count < total.size(); count++) {
                 sum += total.get(count);
         }
 
-        System.out.printf("                        \t \t Sub Total: \t" + "\t %.2f", sum);
+        console.log("                        \t \t Sub Total: \t" + "\t %.2f", sum);
         
         discounT = sum * (discount / 100);
-        System.out.printf("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        console.log("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
         
          vat = sum * (17.50 / 100);
-         System.out.printf("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
-        System.out.println();
+         console.log("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
+        console.log();
         
-        System.out.println("===========================================================================");
+        console.log("===========================================================================");
         
         billTotal = sum - discounT + vat;
-        System.out.printf("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
-         System.out.printf("\n                        \t \t Amount Paid: \t" + "\t %.2f", payment);
+        console.log("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
+         console.log("\n                        \t \t Amount Paid: \t" + "\t %.2f", payment);
          
-        double balance = payment - billTotal;
-        System.out.printf("\n                        \t \t Balance: \t" + "\t %.2f", balance);
-        System.out.println("\n===========================================================================");
-        System.out.println("                        THANK YOU FOR YOUR PATRONAGE");
-        System.out.println("===========================================================================");
+        let balance = payment - billTotal;
+        console.log("\n                        \t \t Balance: \t" + "\t %.2f", balance);
+        console.log("\n===========================================================================");
+        console.log("                        THANK YOU FOR YOUR PATRONAGE");
+        console.log("===========================================================================");
 
 
 
-
-
-
-
-
-        System.out.print("Enter -1 to quit app or any other number to process another transaction: ");
-        int sentinel = keyboardInput.nextInt();
+        let sentinel = Number(prompt("Enter -1 to quit app or any other number to process another transaction: "));
         if (sentinel == -1) menu = false;
                 }
-        System.out.println("Shutting Down CheckOut software!");
-        }
-}
+        console.log("Shutting Down CheckOut software!");
