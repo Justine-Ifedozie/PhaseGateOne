@@ -1,178 +1,151 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.time.LocalDateTime;
+from datetime import datetime, timedelta
 
-public class CheckOutApp {
-        public static void main (String[] args) {
-        Scanner keyboardInput = new Scanner(System.in);
+items = []
+quantity = []
+pricee = []
+total = []
 
-ArrayList <String> items = new ArrayList <String>();
-ArrayList <Integer> quantity = new ArrayList <Integer>();
-ArrayList <Double> pricee = new ArrayList <Double>();
-ArrayList <Double> total = new ArrayList <Double>();
+menu = True
+while (menu):
 
+        customerName = input("What is the customer's Name? ")
 
-boolean menu = true;
-while (menu) {
+        subMenu = True
+        while subMenu:
+                userPurchase = input("What did the user buy? ")
+                items.append(userPurchase)
 
-                System.out.println("What is the customer's Name? ");
-                String customerName = keyboardInput.nextLine();
+                pieces = input("How many pieces? ")
+                quantity.append(pieces)
 
-                boolean subMenu = true;
-                while (subMenu) {
+                pricePerUnit = float(input("How much per unit? "))
+                pricee.append(pricePerUnit)
 
-                System.out.println("What did the user buy? ");
-                String userPurchase = keyboardInput.nextLine();
-                items.add(userPurchase);
+                toTal = float(pricePerUnit * pieces)
+                total.append(toTal)
 
-                System.out.println("How many pieces? ");
-                String pieces1 = keyboardInput.nextLine();
-                int pieces = Integer.parseInt(pieces1);
-              quantity.add(pieces);
+                addMoreItems = input("Add more Items? ")
+                if addMoreItems.lower() == "yes":
+                        subMenu = True
 
-                System.out.println("How much per unit? ");
-                String pricePerUnit1 = keyboardInput.next();
-                double pricePerUnit = Double.parseDouble(pricePerUnit1);
-                pricee.add(pricePerUnit);
+                elif addMoreItems.lower() == "no":
+                        subMenu = False
 
-                double toTal = pricePerUnit * pieces;
-                total.add(toTal);
-
-                System.out.println("Add more Items? ");
-                String addMoreItems = keyboardInput.nextLine();
-                addMoreItems = keyboardInput.nextLine();
-
-                if (addMoreItems.equalsIgnoreCase("yes")) subMenu = true;
-
-                else if (addMoreItems.equalsIgnoreCase("no")) subMenu = false;
-                }
         
-        System.out.println("What is your name? ");
-        String cashierName = keyboardInput.nextLine();
+        cashierName = input("What is your name? ")
 
-        System.out.println("How much discount will he get? ");
-        String discount1 = keyboardInput.nextLine();
-        double discount = Double.parseDouble(discount1);
+        discount = int(input("How much discount will he get? "))
 
-        String mainMenu = """
+        mainMenu = """
 JUSTINE STORES
 MAIN BRANCH
 LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
 TEL: 09021887133
-                """;
-        System.out.println(mainMenu);
+                """
+        print(mainMenu)
 
-        LocalDateTime dateTime = LocalDateTime.now();
-        System.out.println(dateTime);
-        System.out.println("Cashier: " + cashierName);
-        System.out.println("Customer Name : " + customerName);
-        System.out.println("===========================================================================");
-        System.out.println("ITEM                QTY                PRICE                TOTAL (NGN) ");
-        System.out.println("---------------------------------------------------------------------------");
+        today = datetime.date.today()
+        print(today)
+
+        print("Cashier: ",  cashierName)
+        print("Customer Name : ", customerName)
+        print("===========================================================================")
+        print("ITEM                QTY                PRICE                TOTAL (NGN) ")
+        print("---------------------------------------------------------------------------")
         
-        for (int count = 0; count < items.size(); count++) {
-                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
-                System.out.println();
-                }
+        for item1, item2, item3 in zip(items, quantity, pricee):
+                print(f"{item1} \t {item2} \t {item3}")
+                print()
 
 
-        System.out.println();
-        System.out.println("---------------------------------------------------------------------------");
+
+        print()
+        print("---------------------------------------------------------------------------")
         
-        double sum = 0;
-        for (int count = 0; count < total.size(); count++) {
-                sum += total.get(count);
-        }
+        sum = 0
+        for totals in total:
+                sum += totals
 
-        System.out.printf("                        \t \t Sub Total: \t" + "\t %.2f", sum);
+        print(f"                        \t \t Sub Total: \t  \t  {sum}");
         
-        double discounT = sum * (discount / 100);
-        System.out.printf("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        discounT = float(sum * (discount / 100))
+        print(f"\n                        \t \t Discount: \t + \t {discounT}")
         
-        double vat = sum * (17.50 / 100);
-         System.out.printf("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
-        System.out.println();
+        vat = float(sum * (17.50 / 100))
+        print(f"\n                         \t   VAT  @  17.50: \t + \t , vat")
+        print()
         
-        System.out.println("===========================================================================");
+        print("===========================================================================")
         
-        double billTotal = sum - discounT + vat;
-        System.out.printf("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
-        System.out.println("\n===========================================================================");
-        System.out.printf("THIS IS NOT A RECEIPT, KINDLY PAY   %.2f", billTotal);
-        System.out.println("\n===========================================================================");
+        billTotal = float(sum - discounT + vat)
+        print(f"\n                        \t \t Bill Total: \t + \t , billTotal")
+        print("\n===========================================================================")
+        print(f"THIS IS NOT A RECEIPT, KINDLY PAY   , billTotal")
+        print("\n===========================================================================")
 
-        System.out.println();
-        System.out.println();
+        print()
+        print()
 
-        System.out.println("How much did the customer give to you? ");
-        String payment1 = keyboardInput.next();
-        double payment = Double.parseDouble(payment1);
+        payment = int(input("How much did the customer give to you? "))
 
-        System.out.println();
-        System.out.println();
+        print()
+        print()
 
-        String mainMenu1 = """
+        mainMenu1 = """
 JUSTINE STORES
 MAIN BRANCH
 LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
 TEL: 09021887133
-                """;
-        System.out.println(mainMenu1);
+                """
+        print(mainMenu1)
 
-        LocalDateTime dateTime2 = LocalDateTime.now();
-        System.out.println(dateTime2);
-        System.out.println("Cashier: " + cashierName);
-        System.out.println("Customer Name : " + customerName);
-        System.out.println("===========================================================================");
-        System.out.println("ITEM                QTY                PRICE                TOTAL (NGN) ");
+        today = datetime.date.today()
+        print(today)
+        
+        print("Cashier: " + cashierName)
+        print("Customer Name : " + customerName)
+        print("===========================================================================")
+        print("ITEM                QTY                PRICE                TOTAL (NGN) ")
+        print("---------------------------------------------------------------------------")
+        
+        for item1, item2, item3 in zip(items, quantity, pricee):
+                print(f"{item1} \t {item2} \t {item3}")
+                print()
+
+
+        print();
         System.out.println("---------------------------------------------------------------------------");
         
-        for (int count = 0; count < items.size(); count++) {
-                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
-                System.out.println();
-                }
+        sum = 0
+        for totals in total:
+                sum += totals
 
-
-        System.out.println();
-        System.out.println("---------------------------------------------------------------------------");
         
-        sum = 0;
-        for (int count = 0; count < total.size(); count++) {
-                sum += total.get(count);
-        }
-
-        System.out.printf("                        \t \t Sub Total: \t" + "\t %.2f", sum);
+        print(f"                        \t \t Sub Total: \t  \t  {sum}");
         
-        discounT = sum * (discount / 100);
-        System.out.printf("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        discounT = float(sum * (discount / 100))
+        print(f"\n                        \t \t Discount: \t + \t {discounT}")
         
-         vat = sum * (17.50 / 100);
-         System.out.printf("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
-        System.out.println();
+        vat = float(sum * (17.50 / 100))
+        print(f"\n                         \t   VAT  @  17.50: \t + \t , vat")
+        print()
         
-        System.out.println("===========================================================================");
+        print("===========================================================================")
         
         billTotal = sum - discounT + vat;
-        System.out.printf("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
-         System.out.printf("\n                        \t \t Amount Paid: \t" + "\t %.2f", payment);
+        print(f"\n                        \t \t Bill Total: \t \t  {billTotal}")
+        print(f"\n                        \t \t Amount Paid: \t \t  {payment}")
          
-        double balance = payment - billTotal;
-        System.out.printf("\n                        \t \t Balance: \t" + "\t %.2f", balance);
-        System.out.println("\n===========================================================================");
-        System.out.println("                        THANK YOU FOR YOUR PATRONAGE");
-        System.out.println("===========================================================================");
+        balance = float(payment - billTotal)
+        print(f"\n                        \t \t Balance: \t \t {balance}")
+        print("\n===========================================================================")
+        print("                        THANK YOU FOR YOUR PATRONAGE")
+        print("===========================================================================")
 
 
 
+        sentinel = int(input("Enter -1 to quit app or any other number to process another transaction: "))
+        if sentinel == -1:
+                menu = False
 
-
-
-
-
-        System.out.print("Enter -1 to quit app or any other number to process another transaction: ");
-        int sentinel = keyboardInput.nextInt();
-        if (sentinel == -1) menu = false;
-                }
-        System.out.println("Shutting Down CheckOut software!");
-        }
-}
+print("Shutting Down CheckOut software!")
