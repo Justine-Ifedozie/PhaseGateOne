@@ -84,22 +84,95 @@ TEL: 09021887133
                 sum += total.get(count);
         }
 
-        System.out.println("                        \t \t Sub Total: \t" + "\t" + sum);
+        System.out.printf("                        \t \t Sub Total: \t" + "\t %.2f", sum);
         
         double discounT = sum * (discount / 100);
-        System.out.println("                        \t \t Discount: \t" + "\t" + discounT);
-        System.out.println("VAT @ 17.50%");
+        System.out.printf("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        
+        double vat = sum * (17.50 / 100);
+         System.out.printf("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
+        System.out.println();
+        
         System.out.println("===========================================================================");
-        System.out.println("Bill Total: ");
+        
+        double billTotal = sum - discounT + vat;
+        System.out.printf("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
+        System.out.println("\n===========================================================================");
+        System.out.printf("THIS IS NOT A RECEIPT, KINDLY PAY   %.2f", billTotal);
+        System.out.println("\n===========================================================================");
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println("How much did the customer give to you? ");
+        String payment1 = keyboardInput.next();
+        double payment = Double.parseDouble(payment1);
+
+        System.out.println();
+        System.out.println();
+
+        String mainMenu1 = """
+JUSTINE STORES
+MAIN BRANCH
+LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
+TEL: 09021887133
+                """;
+        System.out.println(mainMenu1);
+
+        LocalDateTime dateTime2 = LocalDateTime.now();
+        System.out.println(dateTime2);
+        System.out.println("Cashier: " + cashierName);
+        System.out.println("Customer Name : " + customerName);
         System.out.println("===========================================================================");
-        System.out.println("THIS IS NOT A RECEIPT, KINDLY PAY 5803.50");
+        System.out.println("ITEM                QTY                PRICE                TOTAL (NGN) ");
+        System.out.println("---------------------------------------------------------------------------");
+        
+        for (int count = 0; count < items.size(); count++) {
+                System.out.println(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
+                System.out.println();
+                }
+
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------");
+        
+        sum = 0;
+        for (int count = 0; count < total.size(); count++) {
+                sum += total.get(count);
+        }
+
+        System.out.printf("                        \t \t Sub Total: \t" + "\t %.2f", sum);
+        
+        discounT = sum * (discount / 100);
+        System.out.printf("\n                        \t \t Discount: \t" + "\t %.2f ", discounT);
+        
+         vat = sum * (17.50 / 100);
+         System.out.printf("\n                         \t   VAT  @  17.50: \t" + "\t %.2f", vat);
+        System.out.println();
+        
         System.out.println("===========================================================================");
+        
+        billTotal = sum - discounT + vat;
+        System.out.printf("\n                        \t \t Bill Total: \t" + "\t %.2f", billTotal);
+         System.out.printf("\n                        \t \t Amount Paid: \t" + "\t %.2f", payment);
+         
+        double balance = payment - billTotal;
+        System.out.printf("\n                        \t \t Balance: \t" + "\t %.2f", balance);
+        System.out.println("\n===========================================================================");
+        System.out.println("                        THANK YOU FOR YOUR PATRONAGE");
+        System.out.println("===========================================================================");
+
+
+
+
+
+
 
 
         System.out.print("Enter -1 to quit app or any other number to process another transaction: ");
         int sentinel = keyboardInput.nextInt();
         if (sentinel == -1) menu = false;
                 }
-        System.out.print("Shutting Down CheckOut software!");
+        System.out.println("Shutting Down CheckOut software!");
         }
 }
