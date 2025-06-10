@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+import datetime
 
 items = []
 quantity = []
@@ -53,8 +53,8 @@ TEL: 09021887133
         print("ITEM                QTY                PRICE                TOTAL (NGN) ")
         print("---------------------------------------------------------------------------")
         
-        for item1, item2, item3 in zip(items, quantity, pricee):
-                print(f"{item1} \t {item2} \t {item3}")
+        for item1, item2, item3, item4 in zip(items, quantity, pricee, total):
+                print(f"{item1} \t \t \t {item2} \t \t  {item3} \t \t {item4}")
                 print()
 
 
@@ -69,18 +69,18 @@ TEL: 09021887133
         print(f"                        \t \t Sub Total: \t  \t  {sum}");
         
         discounT = float(sum * (discount / 100))
-        print(f"\n                        \t \t Discount: \t + \t {discounT}")
+        print(f"\n                        \t \t Discount: \t + \t {discounT:.2f}")
         
         vat = float(sum * (17.50 / 100))
-        print(f"\n                         \t   VAT  @  17.50: \t + \t , vat")
+        print(f"\n                         \t   VAT  @  17.50: \t + \t  {vat:.2f}")
         print()
         
         print("===========================================================================")
         
         billTotal = float(sum - discounT + vat)
-        print(f"\n                        \t \t Bill Total: \t + \t , billTotal")
+        print(f"\n                        \t \t Bill Total: \t + \t  {billTotal:.2f}")
         print("\n===========================================================================")
-        print(f"THIS IS NOT A RECEIPT, KINDLY PAY   , billTotal")
+        print(f"THIS IS NOT A RECEIPT, KINDLY PAY   {billTotal:.2f}")
         print("\n===========================================================================")
 
         print()
@@ -109,12 +109,12 @@ TEL: 09021887133
         print("---------------------------------------------------------------------------")
         
         for item1, item2, item3 in zip(items, quantity, pricee):
-                print(f"{item1} \t {item2} \t {item3}")
+                print(f"{item1} \t \t \t {item2} \t \t  {item3} \t \t {item4}")
                 print()
 
 
         print();
-        System.out.println("---------------------------------------------------------------------------");
+        print("---------------------------------------------------------------------------");
         
         sum = 0
         for totals in total:
@@ -124,20 +124,20 @@ TEL: 09021887133
         print(f"                        \t \t Sub Total: \t  \t  {sum}");
         
         discounT = float(sum * (discount / 100))
-        print(f"\n                        \t \t Discount: \t + \t {discounT}")
+        print(f"\n                        \t \t Discount: \t + \t {discounT:.2f}")
         
         vat = float(sum * (17.50 / 100))
-        print(f"\n                         \t   VAT  @  17.50: \t + \t , vat")
+        print(f"\n                         \t   VAT  @  17.50: \t + \t  {vat:.2f}")
         print()
         
         print("===========================================================================")
         
         billTotal = sum - discounT + vat;
-        print(f"\n                        \t \t Bill Total: \t \t  {billTotal}")
+        print(f"\n                        \t \t Bill Total: \t \t  {billTotal:.2f}")
         print(f"\n                        \t \t Amount Paid: \t \t  {payment}")
          
         balance = float(payment - billTotal)
-        print(f"\n                        \t \t Balance: \t \t {balance}")
+        print(f"\n                        \t \t Balance: \t \t {balance:.2f}")
         print("\n===========================================================================")
         print("                        THANK YOU FOR YOUR PATRONAGE")
         print("===========================================================================")
