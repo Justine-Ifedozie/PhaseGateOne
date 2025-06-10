@@ -2,7 +2,8 @@ const prompt = require("prompt-sync")();
 
 let purchaseDataBase = [];
 let quantityDataBase = [];
-let purchaseDataBase = [];
+let priceDataBase = [];
+let totalPriceDataBase = [];
 
 menu = true;
 while (menu) {
@@ -12,17 +13,17 @@ while (menu) {
                 subMenu = true;
                 while (subMenu) {
 
-                userPurchase = Number(prompt("What did the user buy? "));
+                userPurchase = prompt("What did the user buy? ");
                 purchaseDataBase.push(userPurchase);
 
                 pieces = Number(prompt("How many pieces? "));
                 quantityDataBase.push(pieces);
 
                 pricePerUnit = Number(prompt("How much per unit? "));
-                dataBase.push(pricePerUnit);
+                priceDataBase.push(pricePerUnit);
 
                 let toTal = pricePerUnit * pieces;
-                dataBase.push(toTal);
+                totalPriceDataBase.push(toTal);
 
                 addMoreItems = prompt("Add more Items? ");
 
@@ -51,8 +52,8 @@ TEL: 09021887133
         console.log("ITEM                QTY                PRICE                TOTAL (NGN) ");
         console.log("---------------------------------------------------------------------------");
         
-        for (let count = 0; count < dataBase.length; count++) {
-                console.log(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
+        for (let count = 0; count < purchaseDataBase.length; count++) {
+                console.log(purchaseDataBase[count] + "\t" + "\t    " + quantityDataBase[count] + "\t" + "\t      " + priceDataBase[count] + "\t" + "\t      " + totalPriceDataBase[count]);
                 console.log();
                 }
 
@@ -60,9 +61,9 @@ TEL: 09021887133
         console.log();
         console.log("---------------------------------------------------------------------------");
         
-        const sum = 0;
-        for (let count = 0; count < dataBase.length; count++) {
-                sum += total.get(count);
+        let sum = 0;
+        for (let count = 0; count < purchaseDataBase.length; count++) {
+                sum += totalPriceDataBase[count];
         }
 
         console.log("                        \t \t Sub Total: \t" + "\t %.2f", sum);
@@ -105,8 +106,8 @@ TEL: 09021887133
         console.log("ITEM                QTY                PRICE                TOTAL (NGN) ");
         console.log("---------------------------------------------------------------------------");
         
-        for (let count = 0; count < items.size(); count++) {
-                console.log(items.get(count) + "\t" + "\t    " + quantity.get(count) + "\t" + "\t      " + pricee.get(count) + "\t" + "\t      " + total.get(count));
+       for (let count = 0; count < purchaseDataBase.length; count++) {
+                console.log(purchaseDataBase[count] + "\t" + "\t    " + quantityDataBase[count] + "\t" + "\t      " + priceDataBase[count] + "\t" + "\t      " + totalPriceDataBase[count]);
                 console.log();
                 }
 
@@ -115,8 +116,8 @@ TEL: 09021887133
         console.log("---------------------------------------------------------------------------");
         
         sum = 0;
-        for (count = 0; count < total.size(); count++) {
-                sum += total.get(count);
+        for (let count = 0; count < purchaseDataBase.length; count++) {
+                sum += totalPriceDataBase[count];
         }
 
         console.log("                        \t \t Sub Total: \t" + "\t %.2f", sum);
