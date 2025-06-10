@@ -15,7 +15,7 @@ while (menu):
                 userPurchase = input("What did the user buy? ")
                 items.append(userPurchase)
 
-                pieces = input("How many pieces? ")
+                pieces = int(input("How many pieces? "))
                 quantity.append(pieces)
 
                 pricePerUnit = float(input("How much per unit? "))
