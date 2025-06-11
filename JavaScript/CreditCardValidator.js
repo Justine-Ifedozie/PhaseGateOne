@@ -1,25 +1,55 @@
-import java.util.Scanner;
-public class CreditCardValidator {
-        public static void main(String[] args) {
-                Scanner keyboardInput = new Scanner(System.in);
+const prompt = require("prompt-sync")();
 
-                System.out.println("Hello, Kindly Enter Card details to verify: ");
-                String cardDetails = keyboardInput.next();
-              
-                String cardType = CreditCardValidatorFunction.creditCardType(cardDetails);
+function creditCardType(cardNum) {
+        let cardName = " ";
+        let firstDigit = Number(cardNum.charAt(0));
+
+        let secondDigit = Number(cardNum.charAt(1));
                 
-                System.out.println("***************************************");
-                System.out.println("**Credit Card Type: "+ cardType);
-                System.out.println("**Credit Card Number: "+ cardDetails);
-
-                int cardLength = CreditCardValidatorFunction.cardLength(cardDetails);
-                System.out.println("**Credit Card Digit Length: "+ cardLength);
-
-                String cardStatus = CreditCardValidatorFunction.cardValidity(cardDetails);
-                System.out.println("**Credit Card Validity Status: "+ cardStatus);
-
-                System.out.println("***************************************");
-
-
+                if (cardNum.length <= 16 && cardNum.length >= 13) {
+                        if (firstDigit == 4) cardName = "Visa Cards";
+                        else if (firstDigit == 5) cardName = "MasterCard";
+                        else if (firstDigit == 6) cardName = "Discover Cards";
+                        else if (firstDigit == 3 && secondDigit == 7) cardName = "American ExpressCards";
+                        else{
+                                cardName = "Invalid-Card";
+                        }
+                        }
+                else{
+                        cardName = "Invalid Card";
+                        }
+                return cardName; 
         }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cardDetails = prompt("Hello, Kindly Enter Card details to verify: ");
+              
+const cardType = creditCardType(cardDetails);
+                
+console.log("***************************************");
+console.log("**Credit Card Type: "+ cardType);
+console.log("**Credit Card Number: "+ cardDetails);
+
+//let cardLength = cardLength(cardDetails);
+console.log("**Credit Card Digit Length: "+ cardLength);
+
+//let cardStatus = cardValidity(cardDetails);
+console.log("**Credit Card Validity Status: "+ cardStatus);
+
+console.log("***************************************");
+
+
