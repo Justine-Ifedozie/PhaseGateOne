@@ -22,19 +22,40 @@ function creditCardType(cardNum) {
         }
 
 
+function cardLength(cardNum){
+        let length = cardNum.length;
+        return length;
+        }
 
 
+function cardValidity(cardNum){
+        let sum = 0, add = 0, total = 0;
+        let validity = " ";
+        for(let count = cardNum.length - 1; count > -1; count-= 2){
+                  let digits = Number(cardNum.charAt(count));
+                let firstResult = digits * 2;
+                let secondResult;
+                
+                if (firstResult >= 10) {
+                        secondResult = (firstResult / 10) + (firstResult % 10);
+                }
+                else{
+                secondResult = firstResult;
+                }
+                sum += secondResult;
+        }
+        
+        for(let count = 0; count < cardNum.length -1; count += 2) {
+               let digits = Number(cardNum.charAt(count));
+                add += digits;
+        }
+        total = sum + add;
+        if (total % 10 == 0) validity = "Valid";
 
+        else if (total % 10 != 0) validity = "Invalid";
 
-
-
-
-
-
-
-
-
-
+        return validity;
+        }
 
 cardDetails = prompt("Hello, Kindly Enter Card details to verify: ");
               
@@ -44,12 +65,10 @@ console.log("***************************************");
 console.log("**Credit Card Type: "+ cardType);
 console.log("**Credit Card Number: "+ cardDetails);
 
-//let cardLength = cardLength(cardDetails);
-console.log("**Credit Card Digit Length: "+ cardLength);
+let cardLength1 = cardLength(cardDetails);
+console.log("**Credit Card Digit Length: "+ cardLength1);
 
-//let cardStatus = cardValidity(cardDetails);
+let cardStatus = cardValidity(cardDetails);
 console.log("**Credit Card Validity Status: "+ cardStatus);
 
 console.log("***************************************");
-
-
