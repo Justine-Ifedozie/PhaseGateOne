@@ -30,8 +30,16 @@ public class CreditCardValidatorFunction {
         }
 
         public static String cardValidity(String cardNum){
+                int counter = 2;
+
+        for(int count = 0; count > cardNum.length(); count++){
+                characterss = cardNum.charAt(counter);
+                digits = Character.getNumericValue(characterss);
+                
+                counter+2;
 
 
+        }
 
         }
 //int cardNumber = Integer.parseInt(cardDetails);
