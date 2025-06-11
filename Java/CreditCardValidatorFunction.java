@@ -29,7 +29,7 @@ public class CreditCardValidatorFunction {
         }
 
         public static String cardValidity(String cardNum){
-                int sum = 0, int add = 0; total = 0;
+                int sum = 0, add = 0, total = 0;
               String validity = " ";
         for(int count = cardNum.length() - 1; count > -1; count-= 2){
                 char characterss = cardNum.charAt(count);
@@ -41,7 +41,7 @@ public class CreditCardValidatorFunction {
                         secondResult = (firstResult / 10) + (firstResult % 10);
                 }
                 else{
-                secondResult = firstResult);
+                secondResult = firstResult;
                 }
                 sum += secondResult;
         }
@@ -54,10 +54,9 @@ public class CreditCardValidatorFunction {
         total = sum + add;
         if (total % 10 == 0) validity = "Valid";
 
-        else{
-        validity = "Invalid";
-        }
-                return validity;
+        else if (total % 10 != 0) validity = "Invalid";
+
+        return validity;
         }
 
 
