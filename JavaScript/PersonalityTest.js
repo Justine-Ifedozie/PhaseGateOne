@@ -30,7 +30,7 @@ let arrayQuestions = [["A. Expend energy, enjoy groups", "B. Conserve energy, en
                                     ["A. Control, govern", "B. Latitude, freedom"]];
 
 
-name = promp("What is your name? ");
+name = prompt("What is your name? ");
 
 console.log(); 
         
@@ -44,25 +44,26 @@ console.log();
         for(let count = 0; count < arrayQuestions.length; count += 4){
                 console.log(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
        
-        String userSelection = " ";
-        while(true) {
-               userSelection = keyboardInput.next().toUpperCase();
+                let userSelection = " ";
+                while(true) {
+                       userSelection1 = prompt("");
+                       userSelection = userSelection1.toUpperCase();
        
-               if (userSelection.equals("A") || userSelection.equals("B")) {
-                       selectionDataBase.add(userSelection); 
+               if (userSelection == "A" || userSelection == "B") {
+                       selectionDataBase.push(userSelection); 
                        break;
                  }
               else {
-                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                      console.log("Expected A or B as Response \n I know this is an error, Please retry again");
                        }
                 }
        
         }
 
-        int aCount = 0;
-       int bCount = 0;
-        for (int count = 0; count < selectionDataBase.size(); count++){
-                if (selectionDataBase.get(count).equals("A")){
+        let aCount = 0;
+       let bCount = 0;
+        for (let count = 0; count < selectionDataBase.length; count++){
+                if (selectionDataBase[count] == "A"){
                         aCount++;
                 }
                 else{
@@ -78,30 +79,31 @@ console.log();
    
 //For the second group of question.
 
-        System.out.println();
+        console.log();
         
-        for(int count = 1; count < arrayQuestions.length; count += 4){
-                System.out.println(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
+        for(let count = 1; count < arrayQuestions.length; count += 4){
+                console.log(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
        
-        String userSelection = " ";
+        let userSelection = " ";
         while(true) {
-               userSelection = keyboardInput.next().toUpperCase();
+                       userSelection1 = prompt("pick A or B");
+                       userSelection = userSelection1.toUpperCase();
        
-               if (userSelection.equals("A") || userSelection.equals("B")) {
-                       sensingIntuitive.add(userSelection); 
+               if (userSelection == "A" || userSelection == "B") {
+                       sensingIntuitive.push(userSelection); 
                        break;
                  }
               else {
-                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                      console.log("Expected A or B as Response \n I know this is an error, Please retry again");
                        }
                 }
        
         }
 
-        int secACount = 0;
-       int secBCount = 0;
-        for (int count = 0; count < sensingIntuitive.size(); count++){
-                if (sensingIntuitive.get(count).equals("A")){
+        let secACount = 0;
+       let secBCount = 0;
+        for (let count = 0; count < sensingIntuitive.length; count++){
+                if (sensingIntuitive[count] == "A"){
                         secACount++;
                 }
                 else{
@@ -117,30 +119,31 @@ console.log();
 
 //For the third group of question.
 
-        System.out.println();
+        console.log();
         
-        for(int count = 2; count < arrayQuestions.length; count += 4){
-                System.out.println(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
+        for(let count = 2; count < arrayQuestions.length; count += 4){
+               console.log(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
        
-        String userSelection = " ";
+        let userSelection = " ";
         while(true) {
-               userSelection = keyboardInput.next().toUpperCase();
+                      userSelection1 = prompt("pick A or B");
+                          userSelection = userSelection1.toUpperCase();
        
-               if (userSelection.equals("A") || userSelection.equals("B")) {
-                       thinkingFeeling.add(userSelection); 
+               if (userSelection == "A" || userSelection == "B") {
+                       thinkingFeeling.push(userSelection); 
                        break;
                  }
               else {
-                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                      console.log("Expected A or B as Response \n I know this is an error, Please retry again");
                        }
                 }
        
         }
 
-        int thirdACount = 0;
-       int thirdBCount = 0;
-        for (int count = 0; count < thinkingFeeling.size(); count++){
-                if (thinkingFeeling.get(count).equals("A")){
+        let thirdACount = 0;
+       let thirdBCount = 0;
+        for (let count = 0; count < thinkingFeeling.length; count++){
+                if (thinkingFeeling[count] == "A"){
                         thirdACount++;
                 }
                 else{
@@ -156,30 +159,31 @@ console.log();
 
 //For the fourth group of question.
 
-        System.out.println();
+        console.log();
         
-        for(int count = 3; count < arrayQuestions.length; count += 4){
-                System.out.println(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
+        for(let count = 3; count < arrayQuestions.length; count += 4){
+                console.log(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
        
-        String userSelection = " ";
+        let userSelection = " ";
         while(true) {
-               userSelection = keyboardInput.next().toUpperCase();
+              userSelection1 = prompt("pick A or B");
+                  userSelection = userSelection1.toUpperCase();
        
-               if (userSelection.equals("A") || userSelection.equals("B")) {
-                       judgingPerception.add(userSelection); 
+               if (userSelection == "A" || userSelection == "B") {
+                       judgingPerception.push(userSelection); 
                        break;
                  }
               else {
-                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                      console.log("Expected A or B as Response \n I know this is an error, Please retry again");
                        }
                 }
        
         }
 
-        int fourthACount = 0;
-       int fourthBCount = 0;
-        for (int count = 0; count < judgingPerception.size(); count++){
-                if (judgingPerception.get(count).equals("A")){
+        let fourthACount = 0;
+       let fourthBCount = 0;
+        for (let count = 0; count < judgingPerception.length; count++){
+                if (judgingPerception[count] == "A"){
                         fourthACount++;
                 }
                 else{
@@ -194,85 +198,83 @@ console.log();
 
         
  //First set of question print out
-         System.out.println("Hello " + name + " You selected ");
+         console.log("Hello " + name + " You selected ");
       
-      int counter = 0;
-      for (int count = 0; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(counter).equals("A")){
-                      System.out.println(arrayQuestions[count][0]);
+      let counter = 0;
+      for (let count = 0; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase[counter] == "A"){
+                      console.log(arrayQuestions[count][0]);
                   }
                 else {
-                        System.out.println(arrayQuestions[count][1]);
+                        console.log(arrayQuestions[count][1]);
                            }
                            counter++;
                }
-        System.out.println();
+        console.log();
       
-        System.out.println("Number of A selected: " + aCount);  
-       System.out.println("Number of  B selected: " + bCount);
+        console.log("Number of A selected: " + aCount);  
+       console.log("Number of  B selected: " + bCount);
 
   //Second set of question print out
-         System.out.println();
+         console.log();
       
-      int secCounter = 0;
-      for (int count = 1; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(secCounter).equals("A")){
-                      System.out.println(arrayQuestions[count][0]);
+      let secCounter = 0;
+      for (let count = 1; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase[secCounter] == "A"){
+                      console.log(arrayQuestions[count][0]);
                   }
                 else {
-                        System.out.println(arrayQuestions[count][1]);
+                        console.log(arrayQuestions[count][1]);
                            }
                            secCounter++;
                }
-        System.out.println();
+        console.log();
       
-        System.out.println("Number of A selected: " + secACount);  
-       System.out.println("Number of  B selected: " +secBCount);
+        console.log("Number of A selected: " + secACount);  
+       console.log("Number of  B selected: " +secBCount);
 
   //Third set of question print out
-         System.out.println();
+         console.log();
       
-      int thirdCounter = 0;
-      for (int count = 2; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(thirdCounter).equals("A")){
-                      System.out.println(arrayQuestions[count][0]);
+      let thirdCounter = 0;
+      for (let count = 2; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase[thirdCounter] == "A"){
+                      console.log(arrayQuestions[count][0]);
                   }
                 else {
-                        System.out.println(arrayQuestions[count][1]);
+                        console.log(arrayQuestions[count][1]);
                            }
                            thirdCounter++;
                }
-        System.out.println();
+        console.log();
       
-        System.out.println("Number of A selected: " + thirdACount);  
-       System.out.println("Number of  B selected: " +thirdBCount);
+        console.log("Number of A selected: " + thirdACount);  
+       console.log("Number of  B selected: " +thirdBCount);
 
   //Fourth set of question print out
-         System.out.println();
+         console.log();
       
-      int fourthCounter = 0;
-      for (int count = 3; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(fourthCounter).equals("A")){
-                      System.out.println(arrayQuestions[count][0]);
+      let fourthCounter = 0;
+      for (let count = 3; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase[fourthCounter] == "A"){
+                      console.log(arrayQuestions[count][0]);
                   }
                 else {
-                        System.out.println(arrayQuestions[count][1]);
+                        console.log(arrayQuestions[count][1]);
                            }
                            fourthCounter++;
                }
-        System.out.println();
+        console.log();
       
-        System.out.println("Number of A selected: " + fourthACount);  
-       System.out.println("Number of  B selected: " + fourthBCount);
+        console.log("Number of A selected: " + fourthACount);  
+       console.log("Number of  B selected: " + fourthBCount);
 
-        System.out.println();
+        console.log();
 
-        System.out.println("Your personality is: " + personality);
+        console.log("Your personality is: " + personality);
 
-        String personalityDisplay = PersonalityTestFunction.personalityDescription(personality);
+        let personalityDisplay = personalityDescription(personality);
 
-        System.out.println(personalityDisplay);
+        console.log(personalityDisplay);
         
         
-     }
-}
