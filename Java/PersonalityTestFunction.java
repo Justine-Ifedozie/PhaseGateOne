@@ -108,15 +108,52 @@ following their own sensible judgment. They often serve as a stabilizing
 force among others, able to offer solid direction amid adversity.
                                                         """;
                 }
-
-
-
-
-        
-                
-                
-                
-                
+           else if (personality.equals("ESFJ")){
+                        personalityType = """
+Consul
+ESFJ (Consul) is a personality type with the Extraverted, Observant, 
+Feeling, and Judging traits. They are attentive and people-focused, 
+and they enjoy taking part in their social community. Their achievements 
+are guided by decisive values, and they willingly offer guidance to others.
+                                                        """;
+                }
+           else if (personality.equals("ISTP")){
+                        personalityType = """
+Virtuoso
+ISTP (Virtuoso) is a personality type with the Introverted, Observant, 
+Thinking, and Prospecting traits. They tend to have an individualistic 
+mindset, pursuing goals without needing much external connection. 
+They engage in life with inquisitiveness and personal skill, varying their 
+approach as needed.
+                                                        """;
+                }
+           else if (personality.equals("ISFP")){
+                        personalityType = """
+Adventurer
+ISFP (Adventurer) is a personality type with the Introverted, Observant, 
+Feeling, and Prospecting traits. They tend to have open minds, approaching life, 
+new experiences, and people with grounded warmth. Their ability to stay in the 
+moment helps them uncover exciting potentials.
+                                                        """;
+                }
+           else if (personality.equals("ESTP")){
+                        personalityType = """
+Entrepreneur
+ESTP (Entrepreneur) is a personality type with the Extraverted, Observant, 
+Thinking, and Prospecting traits. They tend to be energetic and action-oriented, 
+deftly navigating whatever is in front of them. They love uncovering 
+life’s opportunities, whether socializing with others or in more personal pursuits.
+                                                         """;
+                }
+           else if (personality.equals("ESFP")){
+                        personalityType = """
+Entertainer
+ESFP (Entertainer) is a personality type with the Extraverted, Observant, Feeling, 
+and Prospecting traits. These people love vibrant experiences, engaging in life eagerly 
+and taking pleasure in discovering the unknown. They can be very social, often 
+encouraging others into shared activities.
+                                                         """;
+                }    
                 
         else{
                 personalityType = "Invalid Input";
