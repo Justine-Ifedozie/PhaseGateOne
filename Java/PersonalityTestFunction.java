@@ -1,7 +1,10 @@
 public class PersonalityTestFunction {
 
-        public static String personalityDescription(String personality){
+        public static String personalityDescription(String personal){
                 String personalityType = " ";
+               
+               String personality = personal.trim();
+               
                 if (personality.equals("INTJ")){
                         personalityType = """
 Architect 
@@ -51,27 +54,75 @@ thoughtfulness and imagination. Their inner vision, personal values,
 and a quiet, principled version of humanism guide them in all things.
                                                         """;
                 }
+           else if (personality.equals("INFP")){
+                        personalityType = """
+Mediator
+INFP (Mediator) is a personality type with the Introverted, Intuitive, 
+Feeling, and Prospecting traits. These rare personality types tend to 
+be quiet, open-minded, and imaginative, and they apply a caring and 
+creative approach to everything they do.   
+                                                        """;
+                }
+           else if (personality.equals("ENFJ")){
+                        personalityType = """
+Protagonist
+ENFJ (Protagonist) is a personality type with the Extraverted, Intuitive, 
+Feeling, and Judging traits. These warm, forthright types love helping 
+others, and they tend to have strong ideas and values. 
+They back their perspective with the creative energy to achieve their goals.
+                                                        """;
+                }
+           else if (personality.equals("ENFP")){
+                        personalityType = """
+Campaigner
+ENFP (Campaigner) is a personality type with the Extraverted, Intuitive, 
+Feeling, and Prospecting traits. These people tend to embrace big ideas 
+and actions that reflect their sense of hope and goodwill toward others. 
+Their vibrant energy can flow in many directions.
+                                                        """;
+                }
+           else if (personality.equals("ISTJ")){
+                        personalityType = """
+Logistician
+ISTJ (Logistician) is a personality type with the Introverted, Observant, 
+Thinking, and Judging traits. These people tend to be reserved yet willful, 
+with a rational outlook on life. They compose their actions carefully and 
+carry them out with methodical purpose.
+                                                        """;
+                }
+           else if (personality.equals("ISFJ")){
+                        personalityType = """
+Defender
+ISFJ (Defender) is a personality type with the Introverted, Observant, 
+Feeling, and Judging traits. These people tend to be warm and 
+unassuming in their own steady way. They’re efficient and responsible, 
+giving careful attention to practical details in their daily lives.
+                                                        """;
+                }
+           else if (personality.equals("ESTJ")){
+                        personalityType = """
+Executive
+ESTJ (Executive) is a personality type with the Extraverted, Observant, 
+Thinking, and Judging traits. They possess great fortitude, emphatically 
+following their own sensible judgment. They often serve as a stabilizing 
+force among others, able to offer solid direction amid adversity.
+                                                        """;
+                }
 
+
+
+
+        
+                
+                
+                
+                
+                
+        else{
+                personalityType = "Invalid Input";
+                }
 
                 return personalityType;
         }          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
