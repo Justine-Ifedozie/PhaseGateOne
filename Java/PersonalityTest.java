@@ -10,12 +10,12 @@ public class PersonalityTest {
               ArrayList<String>thinkingFeeling = new ArrayList<>();
               ArrayList<String>judgingPerception = new ArrayList<>();
 
-
+                String personality = " ";
         
         String [] [] arrayQuestions = {{"A. Expend energy, enjoy groups", "B. Conserve energy, enjoy one-on-one"},
                                     {"A. Interpret literally", "B. Looking for meaning and possiblities"},
                                     {"A. Logical, thinking, questioning", "B. Emphatetic, feeling, accomodating"},
-                                    {"A. Orgamized, orderly", "B. Flexible, adaptable"},
+                                    {"A. Organized, orderly", "B. Flexible, adaptable"},
                                     {"A. Moreoutgoing, think out loud", "B. more reserved, think to yourself"},
                                     {"A. Practical, realistic, experiential", "B. Imagimative, innovative, theoretical"},
                                     {"A. Candid, straight forward, frank", "B. Tactful, kind, encouraging"},
@@ -75,6 +75,12 @@ public class PersonalityTest {
         }
        }
        
+        if (aCount > bCount) personality += "E";
+       else{
+       personality += "I";
+        }
+        
+   
 //For the second group of question.
 
         System.out.println();
@@ -107,6 +113,14 @@ public class PersonalityTest {
                         secBCount++;
         }
        }
+
+        if (secACount > secBCount) personality += "S";
+       else{
+       personality += "N";
+        }
+
+
+
 
 //For the third group of question.
 
@@ -141,6 +155,14 @@ public class PersonalityTest {
         }
        }
 
+        if (thirdACount > thirdBCount) personality += "T";
+       else{
+       personality += "F";
+        }
+
+
+
+
 //For the fourth group of question.
 
         System.out.println();
@@ -153,7 +175,7 @@ public class PersonalityTest {
                userSelection = keyboardInput.next().toUpperCase();
        
                if (userSelection.equals("A") || userSelection.equals("B")) {
-                       thinkingFeeling.add(userSelection); 
+                       judgingPerception.add(userSelection); 
                        break;
                  }
               else {
@@ -174,15 +196,10 @@ public class PersonalityTest {
         }
        }
 
-
-
-
-
-
-
-
-
-
+        if (fourthACount > fourthBCount) personality += "J";
+       else{
+       personality += "P";
+        }
 
 
 
@@ -241,8 +258,27 @@ public class PersonalityTest {
         System.out.println("Number of A selected: " + thirdACount);  
        System.out.println("Number of  B selected: " +thirdBCount);
 
+  //Fourth set of question print out
+         System.out.println();
+      
+      int fourthCounter = 0;
+      for (int count = 3; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase.get(fourthCounter).equals("A")){
+                      System.out.println(arrayQuestions[count][0]);
+                  }
+                else {
+                        System.out.println(arrayQuestions[count][1]);
+                           }
+                           fourthCounter++;
+               }
+        System.out.println();
+      
+        System.out.println("Number of A selected: " + fourthACount);  
+       System.out.println("Number of  B selected: " + fourthBCount);
 
+        System.out.println();
 
+        System.out.println("Your personality is: " + personality);
 
      }
 }
