@@ -3,7 +3,14 @@ import java.util.Scanner;
 public class PersonalityTest {
         public static void main (String[] args) {
                 Scanner keyboardInput = new Scanner(System.in);
+                
                 ArrayList<String>selectionDataBase = new ArrayList<>();
+              ArrayList<String>selectedQuestions = new ArrayList<>();
+              ArrayList<String>sensingIntuitive = new ArrayList<>();
+              ArrayList<String>thinkingFeeling = new ArrayList<>();
+              ArrayList<String>judgingPerception = new ArrayList<>();
+
+
         
         String [] [] arrayQuestions = {{"A. Expend energy, enjoy groups", "B. Conserve energy, enjoy one-on-one"},
                                     {"A. Interpret literally", "B. Looking for meaning and possiblities"},
@@ -55,16 +62,8 @@ public class PersonalityTest {
                        }
                 }
        
-       
         }
 
-        for (int count = 0; count < selectionDataBase.size(); count++){
-                System.out.println(selectionDataBase.get(count));
-        
-        
-        }
-    
-        
         int aCount = 0;
        int bCount = 0;
         for (int count = 0; count < selectionDataBase.size(); count++){
@@ -75,9 +74,175 @@ public class PersonalityTest {
                         bCount++;
         }
        }
+       
+//For the second group of question.
+
+        System.out.println();
+        
+        for(int count = 1; count < arrayQuestions.length; count += 4){
+                System.out.println(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
+       
+        String userSelection = " ";
+        while(true) {
+               userSelection = keyboardInput.next().toUpperCase();
+       
+               if (userSelection.equals("A") || userSelection.equals("B")) {
+                       sensingIntuitive.add(userSelection); 
+                       break;
+                 }
+              else {
+                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                       }
+                }
+       
+        }
+
+        int secACount = 0;
+       int secBCount = 0;
+        for (int count = 0; count < sensingIntuitive.size(); count++){
+                if (sensingIntuitive.get(count).equals("A")){
+                        secACount++;
+                }
+                else{
+                        secBCount++;
+        }
+       }
+
+//For the third group of question.
+
+        System.out.println();
+        
+        for(int count = 2; count < arrayQuestions.length; count += 4){
+                System.out.println(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
+       
+        String userSelection = " ";
+        while(true) {
+               userSelection = keyboardInput.next().toUpperCase();
+       
+               if (userSelection.equals("A") || userSelection.equals("B")) {
+                       thinkingFeeling.add(userSelection); 
+                       break;
+                 }
+              else {
+                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                       }
+                }
+       
+        }
+
+        int thirdACount = 0;
+       int thirdBCount = 0;
+        for (int count = 0; count < thinkingFeeling.size(); count++){
+                if (thinkingFeeling.get(count).equals("A")){
+                        thirdACount++;
+                }
+                else{
+                        thirdBCount++;
+        }
+       }
+
+//For the fourth group of question.
+
+        System.out.println();
+        
+        for(int count = 3; count < arrayQuestions.length; count += 4){
+                System.out.println(arrayQuestions[count][0] + " \t " + arrayQuestions[count][1]);
+       
+        String userSelection = " ";
+        while(true) {
+               userSelection = keyboardInput.next().toUpperCase();
+       
+               if (userSelection.equals("A") || userSelection.equals("B")) {
+                       thinkingFeeling.add(userSelection); 
+                       break;
+                 }
+              else {
+                      System.out.println("Expected A or B as Response \n I know this is an error, Please retry again");
+                       }
+                }
+       
+        }
+
+        int fourthACount = 0;
+       int fourthBCount = 0;
+        for (int count = 0; count < judgingPerception.size(); count++){
+                if (judgingPerception.get(count).equals("A")){
+                        fourthACount++;
+                }
+                else{
+                        fourthBCount++;
+        }
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+ //First set of question print out
+         System.out.println("Hello " + name + " You selected ");
+      
+      int counter = 0;
+      for (int count = 0; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase.get(counter).equals("A")){
+                      System.out.println(arrayQuestions[count][0]);
+                  }
+                else {
+                        System.out.println(arrayQuestions[count][1]);
+                           }
+                           counter++;
+               }
+        System.out.println();
+      
         System.out.println("Number of A selected: " + aCount);  
        System.out.println("Number of  B selected: " + bCount);
-       
-       
+
+  //Second set of question print out
+         System.out.println();
+      
+      int secCounter = 0;
+      for (int count = 1; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase.get(secCounter).equals("A")){
+                      System.out.println(arrayQuestions[count][0]);
+                  }
+                else {
+                        System.out.println(arrayQuestions[count][1]);
+                           }
+                           secCounter++;
+               }
+        System.out.println();
+      
+        System.out.println("Number of A selected: " + secACount);  
+       System.out.println("Number of  B selected: " +secBCount);
+
+  //Third set of question print out
+         System.out.println();
+      
+      int thirdCounter = 0;
+      for (int count = 2; count < arrayQuestions.length; count += 4){
+                if (selectionDataBase.get(thirdCounter).equals("A")){
+                      System.out.println(arrayQuestions[count][0]);
+                  }
+                else {
+                        System.out.println(arrayQuestions[count][1]);
+                           }
+                           thirdCounter++;
+               }
+        System.out.println();
+      
+        System.out.println("Number of A selected: " + thirdACount);  
+       System.out.println("Number of  B selected: " +thirdBCount);
+
+
+
+
      }
 }
