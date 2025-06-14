@@ -280,5 +280,10 @@ public class PersonalityTest {
 
         System.out.println("Your personality is: " + personality);
 
+        String personalityDisplay = PersonalityTestFunction.personalityDescription(personality);
+
+        System.out.println(personalityDisplay);
+        
+        
      }
 }
