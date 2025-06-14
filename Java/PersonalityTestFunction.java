@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-
 public class PersonalityTestFunction {
-        ArrayList<String>selectionDataBase = new ArrayList<>();
 
         public static String personalityDescription(String personality){
                 String personalityType = " ";
@@ -28,7 +25,30 @@ experiment with personal creativity.
            else if (personality.equals("ENTJ")){
                         personalityType = """
 Commander
-ENTJ (Commander) is a personality type with the Extraverted, Intuitive, Thinking, and Judging traits. They are decisive people who love momentum and accomplishment. They gather information to construct their creative visions but rarely hesitate for long before acting on them.
+ENTJ (Commander) is a personality type with the Extraverted, 
+Intuitive, Thinking, and Judging traits. They are decisive people 
+who love momentum and accomplishment. They gather information 
+to construct their creative visions but rarely hesitate for long before 
+acting on them.
+                                                        """;
+                }
+           else if (personality.equals("ENTP")){
+                        personalityType = """
+Debater
+ENTP (Debater) is a personality type with the Extraverted, Intuitive, 
+Thinking, and Prospecting traits. They tend to be bold and creative, 
+deconstructing and rebuilding ideas with great mental agility. 
+They pursue their goals vigorously despite any resistance they might 
+encounter.
+                                                        """;
+                }
+           else if (personality.equals("INFJ")){
+                        personalityType = """
+Advocate
+INFJ (Advocate) is a personality type with the Introverted, Intuitive, 
+Feeling, and Judging traits. They tend to approach life with deep 
+thoughtfulness and imagination. Their inner vision, personal values, 
+and a quiet, principled version of humanism guide them in all things.
                                                         """;
                 }
 
