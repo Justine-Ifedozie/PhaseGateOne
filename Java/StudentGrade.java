@@ -6,27 +6,24 @@ public class StudentGrade {
 
                 int studentsNumber = 0, subjectNumber = 0;
                 
-                ArrayList <Integer> score = new ArrayList <Integer>();
-                //ArrayList <Integer> score = new ArrayList <Integer>();
-
                 System.out.println("How many students do you have? ");
                 studentsNumber = keyboardInput.nextInt();
 
                 System.out.println("How many subjects do they offer? ");
                 subjectNumber = keyboardInput.nextInt();
+                
+                int [] [] array = new [studentsNumber] [subjectNumber];
 
                 System.out.println("Saving  >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                 System.out.println("Saved successfully");
 
 
-        for (int count = 1; count != studentsNumber + 1; count++) {
+        for (int count = 0; count < array.length; count++) {
 
-
-                for (int counter = 1; counter != subjectNumber + 1; counter++) {
-                        System.out.println("Entering score for student " + count);
-                        System.out.println("Enter score for subject " + counter);
-                        int subjectScore = keyboardInput.nextInt();
-                        score.add(subjectScore);
+                for (int counter = 0; counter < array[count].length; counter++) {
+                        System.out.println("Entering score for student " + (count+ 1));
+                        System.out.println("Enter score for subject " + (counter + 1));
+                        array[count][counter] = keyboardInput.nextInt();
 
                          System.out.println("Saving  >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                          System.out.println("Saved successfully");
@@ -42,16 +39,12 @@ int counter = 0;
         }
         System.out.println(" TOT \t AVE \t POS ");
         System.out.println("=============================================");
-        for (int count = 1; count < studentsNumber + 1; count++) {
-                System.out.print("Student " + count);
+        for (int count = 0; count < studentsNumber; count++) {
+                System.out.print("Student " + (count + 1));
                 
-int countt = 0;
-                for (; counter < score.size(); counter++) {
-                        System.out.print(" \t " + score.get(counter));
+                for (int counter = 0; counter < subjectNumber; counter++) {
+                        System.out.print(" \t " + array[count][count]);
                         countt++;
-                        if (countt == subjectNumber){
-                         break;
-                        }
                       }
                 System.out.println();
         }
