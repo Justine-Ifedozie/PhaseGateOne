@@ -5,6 +5,7 @@ public class StudentGrade {
                 Scanner keyboardInput = new Scanner(System.in);
 
                 int studentsNumber = 0, subjectNumber = 0, total = 0;
+              double average;
                 
                 System.out.println("How many students do you have? ");
                 studentsNumber = keyboardInput.nextInt();
@@ -40,13 +41,16 @@ public class StudentGrade {
         System.out.println("==========================================================");
         for (int count = 0; count < studentsNumber; count++) {
                 total = 0;
+               average = 0;
                 System.out.print("Student " + (count + 1));
                 
                 for (int counter = 0; counter < subjectNumber; counter++) {
                       total += array[count][counter];
+                      average = (double) total / subjectNumber;
                         System.out.print(" \t " + array[count][counter]);
                       }
-              System.out.print("\t " + total);
+              System.out.print("\t " + total + "\t ");
+              System.out.printf("%.2f", average);
                 System.out.println();
         }
 
