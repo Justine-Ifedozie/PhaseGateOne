@@ -58,9 +58,9 @@ public class StudentGrade {
 
         System.out.println("==========================================================");
         System.out.println("==========================================================");
+        System.out.println();
 
-
-
+        System.out.println("SUBJECT SUMMARY");
 
 
 
