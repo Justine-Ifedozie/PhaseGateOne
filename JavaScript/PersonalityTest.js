@@ -383,7 +383,7 @@ console.log();
       
       let secCounter = 0;
       for (let count = 1; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase[secCounter] == "A"){
+                if (sensingIntuitive[secCounter] == "A"){
                       console.log(arrayQuestions[count][0]);
                   }
                 else {
@@ -401,7 +401,7 @@ console.log();
       
       let thirdCounter = 0;
       for (let count = 2; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase[thirdCounter] == "A"){
+                if (thinkingFeeling[thirdCounter] == "A"){
                       console.log(arrayQuestions[count][0]);
                   }
                 else {
@@ -419,7 +419,7 @@ console.log();
       
       let fourthCounter = 0;
       for (let count = 3; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase[fourthCounter] == "A"){
+                if (judgingPerception[fourthCounter] == "A"){
                       console.log(arrayQuestions[count][0]);
                   }
                 else {

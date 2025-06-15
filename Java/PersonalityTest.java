@@ -221,7 +221,7 @@ public class PersonalityTest {
       
       int secCounter = 0;
       for (int count = 1; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(secCounter).equals("A")){
+                if (sensingIntuitive.get(secCounter).equals("A")){
                       System.out.println(arrayQuestions[count][0]);
                   }
                 else {
@@ -239,7 +239,7 @@ public class PersonalityTest {
       
       int thirdCounter = 0;
       for (int count = 2; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(thirdCounter).equals("A")){
+                if (thinkingFeeling.get(thirdCounter).equals("A")){
                       System.out.println(arrayQuestions[count][0]);
                   }
                 else {
@@ -257,7 +257,7 @@ public class PersonalityTest {
       
       int fourthCounter = 0;
       for (int count = 3; count < arrayQuestions.length; count += 4){
-                if (selectionDataBase.get(fourthCounter).equals("A")){
+                if (judgingPerception.get(fourthCounter).equals("A")){
                       System.out.println(arrayQuestions[count][0]);
                   }
                 else {
