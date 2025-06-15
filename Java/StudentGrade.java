@@ -4,7 +4,7 @@ public class StudentGrade {
         public static void main(String[] args) {
                 Scanner keyboardInput = new Scanner(System.in);
 
-                int studentsNumber = 0, subjectNumber = 0;
+                int studentsNumber = 0, subjectNumber = 0, total = 0;
                 
                 System.out.println("How many students do you have? ");
                 studentsNumber = keyboardInput.nextInt();
@@ -12,7 +12,7 @@ public class StudentGrade {
                 System.out.println("How many subjects do they offer? ");
                 subjectNumber = keyboardInput.nextInt();
                 
-                int [] [] array = new [studentsNumber] [subjectNumber];
+                int [] [] array = new int [studentsNumber] [subjectNumber];
 
                 System.out.println("Saving  >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                 System.out.println("Saved successfully");
@@ -29,30 +29,31 @@ public class StudentGrade {
                          System.out.println("Saved successfully");
                         }
                 }
-int counter = 0;
 
-        System.out.println("=============================================");
+        System.out.println("==========================================================");
 
         System.out.print("STUDENT \t ");
         for (int count = 1; count < subjectNumber + 1; count++) {
                 System.out.print("SUB" + count + "\t ");
         }
         System.out.println(" TOT \t AVE \t POS ");
-        System.out.println("=============================================");
+        System.out.println("==========================================================");
         for (int count = 0; count < studentsNumber; count++) {
+                total = 0;
                 System.out.print("Student " + (count + 1));
                 
                 for (int counter = 0; counter < subjectNumber; counter++) {
-                        System.out.print(" \t " + array[count][count]);
-                        countt++;
+                      total += array[count][counter];
+                        System.out.print(" \t " + array[count][counter]);
                       }
+              System.out.print("\t " + total);
                 System.out.println();
         }
 
 
 
-        System.out.println("=============================================");
-        System.out.println("=============================================");
+        System.out.println("==========================================================");
+        System.out.println("==========================================================");
 
 
 
