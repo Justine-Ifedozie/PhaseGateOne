@@ -150,7 +150,7 @@ for questions in arrayQuestions[3::4]:
 fourthACount = 0
 fourthBCount = 0
 
-for items in thinkingFeeling:
+for items in judgingPerception:
         if items == "A":
                 fourthACount+= 1
         else:
@@ -164,64 +164,65 @@ else:
         
 #First set of question print out
 print("Hello " + name + " You selected ")
-      
+
+first_count = 0
 for count in range (0, len(arrayQuestions), 4):
-        for items in selectionDataBase:
-                if items == "A":
-                        print(arrayQuestions[count][0])
-                else:
-                        print(arrayQuestions[count][1])
+        if selectionDataBase[first_count] == "A":
+                print(arrayQuestions[count][0])
+        else:
+                print(arrayQuestions[count][1])
+        first_count += 1
 
 print()
       
-print("Number of A selected: " + aCount)
-print("Number of  B selected: " + bCount)
+print("Number of A selected: ", aCount)
+print("Number of  B selected: ", bCount)
 
 #Second set of question print out
 print()
 
+sec_count = 0
 for count in range (1, len(arrayQuestions), 4):
-        for items in sensingIntuitive:
-                if items == "A":
-                        print(arrayQuestions[count][0])
-                else:
-                        print(arrayQuestions[count][1])
+        if sensingIntuitive[sec_count] == "A":
+                print(arrayQuestions[count][0])
+        else:
+                print(arrayQuestions[count][1])
 print()
 
-print("Number of A selected: " + secACount)
-print("Number of  B selected: " +secBCount)
+print("Number of A selected: ", secACount)
+print("Number of  B selected: ", secBCount)
 
 #Third set of question print out
 print()
-      
+
+third_count = 0
 for count in range (2, len(arrayQuestions), 4):
-        for items in thinkingFeeling:
-                if items == "A":
-                        print(arrayQuestions[count][0])
-                else:
-                        print(arrayQuestions[count][1])
+        if thinkingFeeling[third_count] == "A":
+                print(arrayQuestions[count][0])
+        else:
+                print(arrayQuestions[count][1])
 print()
       
-print("Number of A selected: " + thirdACount)
-print("Number of  B selected: " +thirdBCount)
+print("Number of A selected: ", thirdACount)
+print("Number of  B selected: ", thirdBCount)
 
 #Fourth set of question print out
 print()
 
+fourth_count = 0
 for count in range (2, len(arrayQuestions), 4):
-        for items in judgingPerception:
-                if items == "A":
-                        print(arrayQuestions[count][0])
-                else:
-                        print(arrayQuestions[count][1])
+        if judgingPerception[fourth_count] == "A":
+                print(arrayQuestions[count][0])
+        else:
+                print(arrayQuestions[count][1])
 print()
             
-print("Number of A selected: " + fourthACount)
-print("Number of  B selected: " + fourthBCount)
+print("Number of A selected: ", fourthACount)
+print("Number of  B selected: ", fourthBCount)
 
 print()
 
-print("Your personality is: " + personality)
+print("Your personality is: ", personality)
 
 personalityDisplay = personalityDescription(personality)
 
