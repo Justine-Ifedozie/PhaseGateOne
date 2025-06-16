@@ -13,10 +13,10 @@ List of menu functions
 		Press: 
 		1. Add contact
 		2. Remove contact
-		3. Chat
-		4. Call register
-		5. Tones
-		6. Settings
+		3. Find contact by phone number
+		4. Find contact by first name
+		5. Find contact by last name
+		6. Edit contact
 		0. To switch off your phone
 ================================
 		""";
