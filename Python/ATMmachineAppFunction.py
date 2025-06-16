@@ -6,12 +6,12 @@ def create_account(first_name, last_name, user_pin, card_number, balance = 0.0):
         return accounts
 
 
-def close_account(fir_name, sec_name):
+def close_account(fir_name, sec_name, user_pin):
         for account in accounts:  
-                if account[0] == fir_name and account[1] == sec_name:
-                        del account[0]
+                if account[0] == fir_name and account[1] == sec_name and account[2] == user_pin:
+                        accounts.remove(account)
                         print("<<<<<Account closure succesful>>>>>")
-                else:
+                elif account[0] != fir_name or account[1] != sec_name or account[2] != user_pin:
                         print("Invalid Account")
 
 
@@ -39,11 +39,11 @@ def view_accounts():
         print(accounts)          
 
 
-
 def change_pin(first_name, old_pin, new_pin):
         for account in accounts:
                 if account[0] == first_name and account[2] == old_pin:
                         account[2] == new_pin
+                        return account
                 else:
                         print("Invalid input!")
 

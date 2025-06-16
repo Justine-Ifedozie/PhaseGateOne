@@ -38,21 +38,22 @@ You will be required to make a selection:
                 case 2: 
                         fir_name = input("Enter the first name of the account you wish to close: ")
                         sec_name = input("Enter the last name of the account you wish to close: ")
-                        close_account(fir_name, sec_name)
+                        user_pin = input("Enter your pin: ")
+                        close_account(fir_name, sec_name, user_pin)
                 case 3: 
-                        account_name = input("Enter the name of the account you wish to make a deposit into: ")
+                        account_name = input("Enter the first name of the account you wish to make a deposit into: ")
                         amount = int(input("Enter deposit amount: "))
                         deposit(account_name, amount)
                 case 4: 
                         account_user = input("Enter the name of the account you wish to withdraw from: ")
                         withdraw_amount = int(input("Enter withdraw amount: "))
                         withdraw(account_user, withdraw_amount)
-                        #print(accounts)
                 case 5: 
                         account_name_2 = input("Enter the name of the account you wish to view its balance: ")
                         show_balance(account_name_2)
                 case 6: 
-                        view_accounts()
+                        hh
+                        transfer_to_another_account()
                 case 7: 
                         acc_name = input("Enter the first name of the account you wish to change its pin: ")
                         old_pin = input("Enter account pin: ")
