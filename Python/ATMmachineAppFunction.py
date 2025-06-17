@@ -50,7 +50,12 @@ def change_pin(first_name, old_pin, new_pin):
 def transfer_to_another_account(from_name, to_name, user_pin, amount):
         for account in accounts:
                 if account[0] == from_name and account[2] == user_pin:
-                        if account[0] == to_name:
-                                account[4] = amount
+                        account[4] -= amount
+                        print("<<<<<Transfer Successful>>>>>")
+                else:
+                        print("Invalid Account")
+        for account in accounts:
+                if account[0] == to_name:
+                        account[4] += amount
 
 
