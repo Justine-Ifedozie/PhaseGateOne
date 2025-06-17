@@ -1,4 +1,4 @@
-from ATMmachineAppFunction import create_account, close_account, deposit, withdraw, show_balance, view_accounts, accounts, change_pin
+from ATMmachineAppFunction import create_account, close_account, deposit, withdraw, show_balance, view_accounts, accounts, change_pin, transfer_to_another_account
 
 
 is_running = True
@@ -6,7 +6,7 @@ while is_running:
         
         welcome_text = """
 =============================
-Welcome to Jstee bank!
+Welcome to Bankee bank!
 =============================
 You will be required to make a selection:
 1. Create account (with first name, last name and pin).
@@ -45,15 +45,20 @@ You will be required to make a selection:
                         amount = int(input("Enter deposit amount: "))
                         deposit(account_name, amount)
                 case 4: 
-                        account_user = input("Enter the name of the account you wish to withdraw from: ")
+                        account_user = input("Enter the first name of the account you wish to withdraw from: ")
+                        sec_name = input("Enter the last name of the account you wish to withdraw from: ")
+                        user_pin = input("Enter your pin: ")
                         withdraw_amount = int(input("Enter withdraw amount: "))
-                        withdraw(account_user, withdraw_amount)
+                        withdraw(account_user, sec_name, user_pin, withdraw_amount)
                 case 5: 
                         account_name_2 = input("Enter the name of the account you wish to view its balance: ")
                         show_balance(account_name_2)
                 case 6: 
-                        hh
-                        transfer_to_another_account()
+                        from_name = input("Enter the first name of the account you wish to transfer from: ")
+                        user_pin = input("Enter your pin to verify: ")
+                        to_name = input("Enter the first name of the account you wish to transfer to: ")
+                        amount = int(input("Enter the amount you wish to transfer: "))
+                        transfer_to_another_account(from_name, to_name, user_pin, amount)
                 case 7: 
                         acc_name = input("Enter the first name of the account you wish to change its pin: ")
                         old_pin = input("Enter account pin: ")
